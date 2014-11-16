@@ -32,6 +32,9 @@ void Stribog::AddModulo512(const unsigned char *a, const unsigned char *b, unsig
 	}
 }
 
+// a = N
+// b = h
+// c = k
 void Stribog::AddXor512(const void *a, const void *b, void *c)
 {
 	int i = 0;
@@ -46,6 +49,11 @@ void Stribog::AddXor512(const void *a, const void *b, void *c)
 	{
 		C[i] = A[i] ^ B[i];
 	}
+
+	memcpy(&a, &A, sizeof(A));
+	memcpy(&b, &B, sizeof(B));
+	memcpy(&c, &C, sizeof(C));
+
 }
 
 void Stribog::S(unsigned char *state)

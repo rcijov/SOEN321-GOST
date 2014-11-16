@@ -23,6 +23,7 @@ using namespace Windows::UI::Xaml::Navigation;
 #include "MainPage.xaml.h"
 #include "stribog_test_data.h"
 
+unsigned char h256[32] = {};
 
 void test_256()
 {
@@ -58,4 +59,23 @@ void App2::Page256::txt256_SelectionChanged(Platform::Object^ sender, Windows::U
 void App2::Page256::btnReturn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	this->Frame->Navigate(App2::MainPage::typeid);
+}
+
+
+void App2::Page256::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	/*String^ input = txtInput->Text->ToString();
+	int length = input->Length();
+
+	Platform::String^ fooRT = "aoeu";
+	std::wstring fooW(fooRT->Begin());
+	std::string fooA(f
+		ooW.begin(), fooW.end());
+	const char* charStr = fooA.c_str();
+	const int len = (const int)length;
+	char fix[len];
+	memcpy(fix, charStr, sizeof(charStr));
+
+	Stribog stri;
+	stri.hash_256(fix, length, h256);*/
 }

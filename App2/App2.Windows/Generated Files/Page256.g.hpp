@@ -26,6 +26,8 @@ void ::App2::Page256::InitializeComponent()
     txt256 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txt256"));
     // Get the Button named 'btnReturn'
     btnReturn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnReturn"));
+    // Get the TextBox named 'txtInput'
+    txtInput = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtInput"));
 }
 
 void ::App2::Page256::Connect(int connectionId, Platform::Object^ target)
@@ -39,6 +41,10 @@ void ::App2::Page256::Connect(int connectionId, Platform::Object^ target)
     case 2:
         (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
             ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Page256::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Page256::btnReturn_Click);
+        break;
+    case 3:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Page256::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Page256::Button_Click);
         break;
     }
     (void)connectionId; // Unused parameter

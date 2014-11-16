@@ -14,6 +14,7 @@ namespace Windows {
             namespace Controls {
                 ref class TextBlock;
                 ref class Button;
+                ref class TextBox;
             }
         }
     }
@@ -33,6 +34,7 @@ namespace App2
     
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txt256;
         private: ::Windows::UI::Xaml::Controls::Button^ btnReturn;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ txtInput;
     };
 }
 
