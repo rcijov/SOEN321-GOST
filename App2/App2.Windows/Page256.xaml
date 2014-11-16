@@ -1,0 +1,15 @@
+﻿<Page
+    x:Class="App2.Page256"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="txt256" HorizontalAlignment="Left" Margin="212,163,0,0" TextWrapping="Wrap" Text="Page 256" VerticalAlignment="Top" FontSize="30" SelectionChanged="txt256_SelectionChanged"/>
+        <Button x:Name="btnReturn" Content="&lt;" HorizontalAlignment="Left" Margin="85,48,0,0" VerticalAlignment="Top" Foreground="Black" RenderTransformOrigin="0.5,0.5" Background="#B3E8D731" Height="77" Width="66" FontSize="30" Click="btnReturn_Click"/>
+
+    </Grid>
+</Page>
