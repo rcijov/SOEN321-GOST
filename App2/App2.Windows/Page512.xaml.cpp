@@ -23,9 +23,31 @@ using namespace Windows::UI::Xaml::Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
+//#include "stribog_test_data.h"
+
+//void test_512()
+//{
+//	Stribog st;
+//	int i = 0;
+//	unsigned char h512[64] = {};
+//
+//	for (i = 0; i<TEST_VECTORS; i++)
+//	{
+//		st.hash_512(Message[i], MessageLength[i], h512);
+//
+//		if (memcmp(h512, Hash_512[i], sizeof(unsigned char) * 64))
+//		{
+//			printf("  SelfTesting: Fail\n");
+//			return;
+//		}
+//	}
+//	printf("  SelfTesting: Pass\n");
+//}
+
 Page512::Page512()
 {
 	InitializeComponent();
+	//test_512();
 }
 
 
