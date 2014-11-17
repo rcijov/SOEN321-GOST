@@ -28,6 +28,8 @@ void ::App2::Page256::InitializeComponent()
     btnReturn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnReturn"));
     // Get the TextBox named 'txtInput'
     txtInput = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtInput"));
+    // Get the TextBlock named 'outputLabel'
+    outputLabel = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"outputLabel"));
 }
 
 void ::App2::Page256::Connect(int connectionId, Platform::Object^ target)
