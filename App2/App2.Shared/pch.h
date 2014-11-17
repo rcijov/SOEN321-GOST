@@ -11,7 +11,7 @@
 #include "App.xaml.h"
 
 class Stribog {
-	int width, height;
+	int width, height, choice;
 public:
 	Stribog::Stribog(){};
 	void Stribog::hash_512(const unsigned char *message, unsigned long long length, unsigned char *out);

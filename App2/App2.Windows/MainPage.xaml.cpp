@@ -32,12 +32,14 @@ MainPage::MainPage()
 
 void App2::MainPage::btn256_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	this->Frame->Navigate(App2::Page1::typeid,"256");
+	App2::Page1::Page1(256);
+	this->Frame->Navigate(App2::Page1::typeid);
 }
 
 
 
 void App2::MainPage::btn512_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+	App2::Page1::Page1(526);
 	this->Frame->Navigate(App2::Page1::typeid);
 }

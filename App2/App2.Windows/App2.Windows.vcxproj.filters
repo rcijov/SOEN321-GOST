@@ -9,15 +9,16 @@
   <ItemGroup>
     <Page Include="MainPage.xaml" />
     <Page Include="Page1.xaml" />
+    <Page Include="Stage1.xaml" />
+    <Page Include="Stage2.xaml" />
+    <Page Include="Stage3.xaml" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainPage.xaml.cpp" />
-    <ClCompile Include="Page512.xaml.cpp" />
     <ClCompile Include="Page1.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainPage.xaml.h" />
-    <ClInclude Include="Page512.xaml.h" />
     <ClInclude Include="Page1.xaml.h" />
   </ItemGroup>
   <ItemGroup>

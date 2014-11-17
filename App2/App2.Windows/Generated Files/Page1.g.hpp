@@ -22,8 +22,8 @@ void ::App2::Page1::InitializeComponent()
     // Call LoadComponent on ms-appx:///Page1.xaml
     ::Windows::UI::Xaml::Application::LoadComponent(this, ref new ::Windows::Foundation::Uri(L"ms-appx:///Page1.xaml"), ::Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation::Application);
 
-    // Get the TextBlock named 'txt256'
-    txt256 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txt256"));
+    // Get the TextBlock named 'txtTitle'
+    txtTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtTitle"));
     // Get the Button named 'btnReturn'
     btnReturn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnReturn"));
     // Get the TextBox named 'txtInput'

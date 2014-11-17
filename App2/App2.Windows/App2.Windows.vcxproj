@@ -138,12 +138,30 @@
     <ClInclude Include="Page1.xaml.h">
       <DependentUpon>Page1.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="Stage1.xaml.h">
+      <DependentUpon>Stage1.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Stage2.xaml.h">
+      <DependentUpon>Stage2.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Stage3.xaml.h">
+      <DependentUpon>Stage3.xaml</DependentUpon>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Stage1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Stage2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Stage3.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -165,6 +183,15 @@
     </ClCompile>
     <ClCompile Include="Page1.xaml.cpp">
       <DependentUpon>Page1.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Stage1.xaml.cpp">
+      <DependentUpon>Stage1.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Stage2.xaml.cpp">
+      <DependentUpon>Stage2.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Stage3.xaml.cpp">
+      <DependentUpon>Stage3.xaml</DependentUpon>
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

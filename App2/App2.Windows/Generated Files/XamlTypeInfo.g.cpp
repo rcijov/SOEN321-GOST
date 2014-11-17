@@ -12,10 +12,12 @@
 #include "App.xaml.h"
 #include "MainPage.xaml.h"
 #include "Page1.xaml.h"
+#include "Stage1.xaml.h"
 
 #include "App.g.hpp"
 #include "MainPage.g.hpp"
 #include "Page1.g.hpp"
+#include "Stage1.g.hpp"
 
 ::Platform::Collections::Vector<::Windows::UI::Xaml::Markup::IXamlMetadataProvider^>^ ::XamlTypeInfo::InfoProvider::XamlTypeInfoProvider::OtherProviders::get()
 {
@@ -95,6 +97,19 @@
             []() -> Platform::Object^ 
             {
                 return ref new ::App2::Page1(); 
+            };
+        userType->SetIsLocalType();
+        return userType;
+    }
+
+    if (typeName == L"App2.Stage1")
+    {
+        ::XamlTypeInfo::InfoProvider::XamlUserType^ userType = ref new ::XamlTypeInfo::InfoProvider::XamlUserType(this, typeName, GetXamlTypeByName(L"Windows.UI.Xaml.Controls.Page"));
+        userType->KindOfType = ::Windows::UI::Xaml::Interop::TypeKind::Custom;
+        userType->Activator =
+            []() -> Platform::Object^ 
+            {
+                return ref new ::App2::Stage1(); 
             };
         userType->SetIsLocalType();
         return userType;
