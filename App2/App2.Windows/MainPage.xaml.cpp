@@ -19,8 +19,7 @@ using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
 
-#include "Page256.xaml.h"
-#include "Page512.xaml.h"
+#include "Page1.xaml.h"
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -33,12 +32,12 @@ MainPage::MainPage()
 
 void App2::MainPage::btn256_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	this->Frame->Navigate(App2::Page256::typeid);
+	this->Frame->Navigate(App2::Page1::typeid,"256");
 }
 
 
 
 void App2::MainPage::btn512_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	this->Frame->Navigate(App2::Page512::typeid);
+	this->Frame->Navigate(App2::Page1::typeid);
 }

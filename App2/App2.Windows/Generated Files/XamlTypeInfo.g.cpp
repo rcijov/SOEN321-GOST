@@ -11,13 +11,11 @@
 
 #include "App.xaml.h"
 #include "MainPage.xaml.h"
-#include "Page256.xaml.h"
-#include "Page512.xaml.h"
+#include "Page1.xaml.h"
 
 #include "App.g.hpp"
 #include "MainPage.g.hpp"
-#include "Page256.g.hpp"
-#include "Page512.g.hpp"
+#include "Page1.g.hpp"
 
 ::Platform::Collections::Vector<::Windows::UI::Xaml::Markup::IXamlMetadataProvider^>^ ::XamlTypeInfo::InfoProvider::XamlTypeInfoProvider::OtherProviders::get()
 {
@@ -89,27 +87,14 @@
         return userType;
     }
 
-    if (typeName == L"App2.Page256")
+    if (typeName == L"App2.Page1")
     {
         ::XamlTypeInfo::InfoProvider::XamlUserType^ userType = ref new ::XamlTypeInfo::InfoProvider::XamlUserType(this, typeName, GetXamlTypeByName(L"Windows.UI.Xaml.Controls.Page"));
         userType->KindOfType = ::Windows::UI::Xaml::Interop::TypeKind::Custom;
         userType->Activator =
             []() -> Platform::Object^ 
             {
-                return ref new ::App2::Page256(); 
-            };
-        userType->SetIsLocalType();
-        return userType;
-    }
-
-    if (typeName == L"App2.Page512")
-    {
-        ::XamlTypeInfo::InfoProvider::XamlUserType^ userType = ref new ::XamlTypeInfo::InfoProvider::XamlUserType(this, typeName, GetXamlTypeByName(L"Windows.UI.Xaml.Controls.Page"));
-        userType->KindOfType = ::Windows::UI::Xaml::Interop::TypeKind::Custom;
-        userType->Activator =
-            []() -> Platform::Object^ 
-            {
-                return ref new ::App2::Page512(); 
+                return ref new ::App2::Page1(); 
             };
         userType->SetIsLocalType();
         return userType;

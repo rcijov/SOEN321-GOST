@@ -135,21 +135,15 @@
     <ClInclude Include="MainPage.xaml.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="Page256.xaml.h">
-      <DependentUpon>Page256.xaml</DependentUpon>
-    </ClInclude>
-    <ClInclude Include="Page512.xaml.h">
-      <DependentUpon>Page512.xaml</DependentUpon>
+    <ClInclude Include="Page1.xaml.h">
+      <DependentUpon>Page1.xaml</DependentUpon>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page256.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Page512.xaml">
+    <Page Include="Page1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -169,11 +163,8 @@
     <ClCompile Include="MainPage.xaml.cpp">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="Page256.xaml.cpp">
-      <DependentUpon>Page256.xaml</DependentUpon>
-    </ClCompile>
-    <ClCompile Include="Page512.xaml.cpp">
-      <DependentUpon>Page512.xaml</DependentUpon>
+    <ClCompile Include="Page1.xaml.cpp">
+      <DependentUpon>Page1.xaml</DependentUpon>
     </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
