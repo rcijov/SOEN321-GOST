@@ -17,6 +17,7 @@
         <Button x:Name="btnReturn" Content="&lt;" HorizontalAlignment="Left" Margin="85,48,0,0" VerticalAlignment="Top" Foreground="Black" RenderTransformOrigin="0.5,0.5" Background="#B3E8D731" Height="77" Width="66" FontSize="30" Click="btnReturn_Click"/>
         <TextBox x:Name="txtInput" HorizontalAlignment="Left" Margin="212,263,0,0" TextWrapping="Wrap" Text="Input" VerticalAlignment="Top"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="215,354,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBlock x:Name="outputLabel" HorizontalAlignment="Left" Margin="398,254,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="244" Width="529" Foreground="Black"/>
 
     </Grid>
 </Page>

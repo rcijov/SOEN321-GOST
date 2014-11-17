@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "Page256.xaml.h"
+#include <sstream>
 
 using namespace App2;
 using namespace Platform;
@@ -64,18 +65,54 @@ void App2::Page256::btnReturn_Click(Platform::Object^ sender, Windows::UI::Xaml:
 
 void App2::Page256::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	/*String^ input = txtInput->Text->ToString();
-	int length = input->Length();
-
-	Platform::String^ fooRT = "aoeu";
-	std::wstring fooW(fooRT->Begin());
-	std::string fooA(f
-		ooW.begin(), fooW.end());
-	const char* charStr = fooA.c_str();
-	const int len = (const int)length;
-	char fix[len];
-	memcpy(fix, charStr, sizeof(charStr));
+	//const wchar_t* charArray = txtInput->Text->ToString()->Data();
 
 	Stribog stri;
-	stri.hash_256(fix, length, h256);*/
+
+	//const int size = txtInput->Text->ToString()->Length();
+
+	//char fix[6];
+	//memcpy(fix, charArray, txtInput->Text->ToString()->Length());
+
+	const wchar_t* orig = txtInput->Text->ToString()->Data();
+	size_t origsize = wcslen(orig) + 1;
+	size_t convertedChars = 0;
+	char dst[256];
+	wcstombs_s(&convertedChars, dst, origsize, orig, _TRUNCATE);
+
+
+	unsigned char* casted = reinterpret_cast<unsigned char*>(dst);
+
+	const int lol = strlen((char*)casted) / 2;
+
+	unsigned char *newList = new unsigned char[lol];
+
+	for (size_t i = 0; i < strlen((char*)casted) / 2; i++)
+	{
+		unsigned int value = 0;
+
+		std::stringstream ss;
+
+		ss << std::hex << casted[2*i] << casted[2*i + 1];
+		ss >> value;
+
+		if (i > lol)
+			int a = 0;
+
+		newList[i] = value;
+	}
+
+	stri.hash_256(newList, (strlen((char*)casted) / 2) * 8, h256);
+	
+	int integers[256];
+
+	for (size_t i = 0; i < sizeof(h256); i++)
+	{
+		integers[i] = static_cast<int>(h256[i]);
+	}
+
+	wchar_t wstr[sizeof(integers)];
+	std::mbstowcs(wstr, (const char*)integers, 256);
+	
+	outputLabel->Text = ref new String(wstr);
 }
