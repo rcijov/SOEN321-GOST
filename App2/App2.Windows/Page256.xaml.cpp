@@ -104,15 +104,13 @@ void App2::Page256::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Ro
 
 	stri.hash_256(newList, (strlen((char*)casted) / 2) * 8, h256);
 	
-	int integers[256];
+	String^ stringValue;
+	std::stringstream ss;
 
 	for (size_t i = 0; i < sizeof(h256); i++)
-	{
-		integers[i] = static_cast<int>(h256[i]);
+	{		
+		stringValue += h256[i].ToString();
 	}
-
-	wchar_t wstr[sizeof(integers)];
-	std::mbstowcs(wstr, (const char*)integers, 256);
 	
-	outputLabel->Text = ref new String(wstr);
+	outputLabel->Text = stringValue;
 }
