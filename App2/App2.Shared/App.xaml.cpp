@@ -140,3 +140,5 @@ void App::OnSuspending(Object^ sender, SuspendingEventArgs^ e)
 
 	// TODO: Save application state and stop any background activity
 }
+
+Platform::Collections::Map<std::string, char*> intermediateLists = ref new Platform::Collections::Map < std:string, char* > ();
