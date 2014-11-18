@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include <collection.h>
 
 using namespace App2;
 
@@ -33,6 +34,7 @@ App::App()
 {
 	InitializeComponent();
 	Suspending += ref new SuspendingEventHandler(this, &App::OnSuspending);
+	App::intermediateLists = ref new Platform::Collections::Map < String^, String^>();
 }
 
 /// <summary>
@@ -140,5 +142,3 @@ void App::OnSuspending(Object^ sender, SuspendingEventArgs^ e)
 
 	// TODO: Save application state and stop any background activity
 }
-
-Platform::Collections::Map<std::string, char*> intermediateLists = ref new Platform::Collections::Map < std:string, char* > ();

@@ -17,6 +17,7 @@ namespace App2
 	public:
 		App();
 		virtual void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ e) override;
+		
 
 	private:
 #if WINAPI_FAMILY==WINAPI_FAMILY_PHONE_APP
@@ -27,5 +28,6 @@ namespace App2
 #endif
 
 		void OnSuspending(Platform::Object^ sender, Windows::ApplicationModel::SuspendingEventArgs^ e);
+		Platform::Collections::Map<Platform::String^, Platform::String^>^ intermediateLists;
 	};
 }
