@@ -46,6 +46,35 @@ void test_256()
 	printf("  SelfTesting: Pass\n");
 }
 
+String^ convertFromUnsignedCharArrayToStringStream(unsigned char* input,int size){
+
+	String^ stringValue;
+	for (size_t i = 0; i < size; i++)
+	{
+		stringValue += input[i].ToString();
+	}
+
+	return stringValue;
+}
+unsigned char*  convertFromHexToString(unsigned char * input, int size){
+
+	unsigned char *newList = new unsigned char[size];
+	for (size_t i = 0; i < size; i++)
+	{
+		unsigned int value = 0;
+
+		std::stringstream ss;
+
+		ss << std::hex << input[i];
+		ss >> value;
+
+	
+
+		newList[i] = value;
+	}
+	return newList;
+}
+
 Page1::Page1()
 {
 	InitializeComponent();
@@ -104,14 +133,17 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 	stri.hash_256(newList, (strlen((char*)casted) / 2) * 8, h256);
 	
 	String^ stringValue;
-	std::stringstream ss;
-
-	for (size_t i = 0; i < sizeof(h256); i++)
-	{		
-		stringValue += h256[i].ToString();
-	}
+	//std::stringstream ss;
+	//unsigned char a = stri.infoSave->iv.front();
+	stringValue = convertFromUnsignedCharArrayToStringStream(stri.infoSave->iv.front(), strlen((char*)stri.infoSave->iv.front()));
+	// popped out the the
+	stri.infoSave->iv.pop();
+	//for (size_t i = 0; i < sizeof(h256); i++)
+	//{		
+	//	stringValue += h256[i].ToString();
+	//}
 	
 	outputLabel->Text = stringValue;
 	App2::Stage1::Stage1(choice);
-	this->Frame->Navigate(App2::Stage1::typeid);
+//	this->Frame->Navigate(App2::Stage1::typeid);
 }

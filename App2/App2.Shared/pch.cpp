@@ -19,8 +19,19 @@
 #include <math.h>
 #include "stribog_data.h" 
 
+// functions
+unsigned char* copy(unsigned char* input, int size){
+	unsigned char* aa = new unsigned char[size];
+	memcpy(aa, input, size);
+	return aa;
+}
 
 
+
+Stribog::Stribog(){
+	infoSave = new info();
+
+}
 void Stribog::AddModulo512(const unsigned char *a, const unsigned char *b, unsigned char *c)
 {
 	int i = 0, t = 0;
@@ -226,9 +237,12 @@ void Stribog::hash_256(const unsigned char *message, unsigned long long length, 
 		0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01,
 		0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01
 	};
+	
+	infoSave->iv.push(copy(IV, 64));
 	unsigned char hash[64];
 
 	hash_X(IV, message, length, hash);
 
 	memcpy(out, hash, 32);
 }
+

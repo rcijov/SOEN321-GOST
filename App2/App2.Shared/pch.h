@@ -3,6 +3,25 @@
 // Header for standard system include files.
 //
 
+#ifndef INFO
+#define INFO
+
+#include <sstream>
+#include <queue> 
+using namespace std;
+
+struct info {
+	queue<string> h;
+	queue<string> n;
+	queue<string> m;
+	queue<string> _M;
+	queue<unsigned char*> iv;
+	//vector<string> h;
+};
+
+#endif // !INFO
+
+
 #pragma once
 
 #include <collection.h>
@@ -13,9 +32,10 @@
 class Stribog {
 	int width, height, choice;
 public:
-	Stribog::Stribog(){};
+	Stribog::Stribog();
 	void Stribog::hash_512(const unsigned char *message, unsigned long long length, unsigned char *out);
 	void Stribog::hash_256(const unsigned char *message, unsigned long long length, unsigned char *out);
+	info *infoSave;
 private:
 	void Stribog::AddModulo512(const unsigned char *a, const unsigned char *b, unsigned char *c);
 	void Stribog::AddXor512(const void *a, const void *b, void *c);
@@ -27,3 +47,4 @@ private:
 	void Stribog::g_N(const unsigned char *N, unsigned char *h, const unsigned char *m);
 	void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned long long length, unsigned char *out);
 };
+
