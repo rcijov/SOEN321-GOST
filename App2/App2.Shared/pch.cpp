@@ -174,6 +174,13 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 	unsigned char m[64], *hash = IV;
 	unsigned long long len = length;
 
+	auto app = safe_cast<App2::App^>(App2::App::Current);
+	app->AddHashStep("InitialV", v512);
+	app->AddHashStep("InitialSigma", Sigma);
+	app->AddHashStep("InitialN", Sigma);
+
+	Platform::String^ initialV = app->GetHashStep("InitialV");
+
 	// Stage 2
 	while (len >= 512)
 	{

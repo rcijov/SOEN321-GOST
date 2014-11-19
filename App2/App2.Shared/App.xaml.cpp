@@ -142,3 +142,20 @@ void App::OnSuspending(Object^ sender, SuspendingEventArgs^ e)
 
 	// TODO: Save application state and stop any background activity
 }
+
+Platform::String^ App::GetHashStep(Platform::String^ hashStep)
+{
+	return intermediateLists->Lookup(hashStep);
+}
+
+void App::AddHashStep(Platform::String^ hashStep, unsigned char* value)
+{
+	String^ stringValue;
+
+	for (size_t i = 0; i < sizeof(value); i++)
+	{
+		stringValue += value[i].ToString();
+	}
+
+	intermediateLists->Insert(hashStep, stringValue);
+}

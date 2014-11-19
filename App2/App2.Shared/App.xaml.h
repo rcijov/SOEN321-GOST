@@ -17,7 +17,8 @@ namespace App2
 	public:
 		App();
 		virtual void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ e) override;
-		
+		Platform::String^ GetHashStep(Platform::String^ hashStep);
+		void AddHashStep(Platform::String^ hashStep, unsigned char* value);
 
 	private:
 #if WINAPI_FAMILY==WINAPI_FAMILY_PHONE_APP
