@@ -175,21 +175,30 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 	unsigned long long len = length;
 
 	auto app = safe_cast<App2::App^>(App2::App::Current);
-	app->AddHashStep("InitialV", v512);
-	app->AddHashStep("InitialSigma", Sigma);
-	app->AddHashStep("InitialN", Sigma);
-
-	Platform::String^ initialV = app->GetHashStep("InitialV");
+	
+	app->AddGOSTStep("S1_V", v512);
+	app->AddGOSTStep("S1_Sigma", Sigma);
+	app->AddGOSTStep("S1_N", N);
 
 	// Stage 2
+
+	int iteration = 1;
+
 	while (len >= 512)
 	{
 		memcpy(m, message + len / 8 - 63 - ((len & 0x7) == 0), 64);
 
 		g_N(N, hash, m);
+		app->AddGOSTStep("S2_" + iteration + "_gN", m);
+
 		AddModulo512(N, v512, N);
+		app->AddGOSTStep("S2_" + iteration + "_modN", N);
+
 		AddModulo512(Sigma, m, Sigma);
+		app->AddGOSTStep("S2_" + iteration + "_modSigma", Sigma);
+
 		len -= 512;
+		iteration += 1;
 	}
 
 	memset(m, 0, 64);
@@ -207,6 +216,8 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 
 	g_N(v0, hash, N);
 	g_N(v0, hash, Sigma);
+
+	app->AddGOSTStep("S3_hash", hash);
 
 	memcpy(out, hash, 64);
 }

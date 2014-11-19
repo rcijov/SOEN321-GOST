@@ -111,7 +111,7 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 		stringValue += h256[i].ToString();
 	}
 	
-	outputLabel->Text = stringValue;
+	outputLabel->Text = safe_cast<App2::App^>(App2::App::Current)->GetGOSTStep(L"S3_hash"); //stringValue;
 	App2::Stage1::Stage1(choice);
-	this->Frame->Navigate(App2::Stage1::typeid);
+	//this->Frame->Navigate(App2::Stage1::typeid);
 }

@@ -143,16 +143,17 @@ void App::OnSuspending(Object^ sender, SuspendingEventArgs^ e)
 	// TODO: Save application state and stop any background activity
 }
 
-Platform::String^ App::GetHashStep(Platform::String^ hashStep)
+Platform::String^ App::GetGOSTStep(Platform::String^ hashStep)
 {
 	return intermediateLists->Lookup(hashStep);
 }
 
-void App::AddHashStep(Platform::String^ hashStep, unsigned char* value)
+void App::AddGOSTStep(Platform::String^ hashStep, unsigned char* value)
 {
 	String^ stringValue;
+	size_t length = strlen((const char *)value);
 
-	for (size_t i = 0; i < sizeof(value); i++)
+	for (size_t i = 0; i < length; i++)
 	{
 		stringValue += value[i].ToString();
 	}

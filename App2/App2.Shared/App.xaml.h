@@ -9,6 +9,13 @@
 
 namespace App2
 {
+	public enum class GOSTStep
+	{
+		InitialH,
+		InitialV,
+		Initial
+	};
+
 	/// <summary>
 	/// Provides application-specific behavior to supplement the default Application class.
 	/// </summary>
@@ -17,8 +24,8 @@ namespace App2
 	public:
 		App();
 		virtual void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ e) override;
-		Platform::String^ GetHashStep(Platform::String^ hashStep);
-		void AddHashStep(Platform::String^ hashStep, unsigned char* value);
+		Platform::String^ GetGOSTStep(Platform::String^ hashStep);
+		void AddGOSTStep(Platform::String^ hashStep, unsigned char* value);
 
 	private:
 #if WINAPI_FAMILY==WINAPI_FAMILY_PHONE_APP
