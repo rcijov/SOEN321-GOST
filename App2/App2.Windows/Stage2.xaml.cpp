@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "Stage2.xaml.h"
+#include "Stage3.xaml.h"
 
 using namespace App2;
 
@@ -24,4 +25,10 @@ using namespace Windows::UI::Xaml::Navigation;
 Stage2::Stage2()
 {
 	InitializeComponent();
+}
+
+
+void App2::Stage2::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	this->Frame->Navigate(App2::Stage3::typeid);
 }

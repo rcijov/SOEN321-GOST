@@ -8,6 +8,16 @@
 //     the code is regenerated.
 //------------------------------------------------------------------------------
 
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Controls {
+                ref class TextBlock;
+                ref class Button;
+            }
+        }
+    }
+}
 
 namespace App2
 {
@@ -21,6 +31,8 @@ namespace App2
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ txtTitle;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnStage3;
     };
 }
 

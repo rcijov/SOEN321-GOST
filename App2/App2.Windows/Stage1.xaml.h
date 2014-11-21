@@ -18,5 +18,7 @@ namespace App2
 	public:
 		Stage1();
 		Stage1(int c);
+	private:
+		void Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

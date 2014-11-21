@@ -14,6 +14,8 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="240,101,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" FontSize="30" Foreground="Black"/>
+        <Image x:Name="imgBox" HorizontalAlignment="Left" Height="230" Margin="164,189,0,0" VerticalAlignment="Top" Width="385"/>
+        <Button x:ConnectionId='1' Content="Stage 2" HorizontalAlignment="Left" Margin="1020,633,0,0" VerticalAlignment="Top" Background="#FFCF3D3D"                      Height="73" Width="133"/>
     </Grid>
 </Page>
 

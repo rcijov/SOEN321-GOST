@@ -5,6 +5,9 @@
       <UniqueIdentifier>{45985df7-49ce-47c4-b223-f9139ad040bb}</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
+    <Filter Include="Assets\Stage1">
+      <UniqueIdentifier>{d99ce11d-d31e-4b3d-a1b4-5651f7e11f96}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
@@ -16,10 +19,16 @@
   <ItemGroup>
     <ClCompile Include="MainPage.xaml.cpp" />
     <ClCompile Include="Page1.xaml.cpp" />
+    <ClCompile Include="Stage1.xaml.cpp" />
+    <ClCompile Include="Stage2.xaml.cpp" />
+    <ClCompile Include="Stage3.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainPage.xaml.h" />
     <ClInclude Include="Page1.xaml.h" />
+    <ClInclude Include="Stage1.xaml.h" />
+    <ClInclude Include="Stage2.xaml.h" />
+    <ClInclude Include="Stage3.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -39,6 +48,21 @@
     </Image>
     <Image Include="Assets\SplashScreen.scale-100.png">
       <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Stage1\1.png">
+      <Filter>Assets\Stage1</Filter>
+    </Image>
+    <Image Include="Assets\Stage1\2.png">
+      <Filter>Assets\Stage1</Filter>
+    </Image>
+    <Image Include="Assets\Stage1\3.png">
+      <Filter>Assets\Stage1</Filter>
+    </Image>
+    <Image Include="Assets\Stage1\4.png">
+      <Filter>Assets\Stage1</Filter>
+    </Image>
+    <Image Include="Assets\Stage1\5.png">
+      <Filter>Assets\Stage1</Filter>
     </Image>
   </ItemGroup>
 </Project>
