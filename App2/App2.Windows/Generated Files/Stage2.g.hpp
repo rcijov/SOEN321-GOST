@@ -26,6 +26,16 @@ void ::App2::Stage2::InitializeComponent()
     txtTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtTitle"));
     // Get the Button named 'btnStage3'
     btnStage3 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnStage3"));
+    // Get the Button named 'btn1'
+    btn1 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btn1"));
+    // Get the Button named 'btn2'
+    btn2 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btn2"));
+    // Get the Button named 'btn3'
+    btn3 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btn3"));
+    // Get the Button named 'btn4'
+    btn4 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btn4"));
+    // Get the Button named 'btn5'
+    btn5 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btn5"));
 }
 
 void ::App2::Stage2::Connect(int connectionId, Platform::Object^ target)

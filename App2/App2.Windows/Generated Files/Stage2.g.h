@@ -33,6 +33,11 @@ namespace App2
     
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtTitle;
         private: ::Windows::UI::Xaml::Controls::Button^ btnStage3;
+        private: ::Windows::UI::Xaml::Controls::Button^ btn1;
+        private: ::Windows::UI::Xaml::Controls::Button^ btn2;
+        private: ::Windows::UI::Xaml::Controls::Button^ btn3;
+        private: ::Windows::UI::Xaml::Controls::Button^ btn4;
+        private: ::Windows::UI::Xaml::Controls::Button^ btn5;
     };
 }
 

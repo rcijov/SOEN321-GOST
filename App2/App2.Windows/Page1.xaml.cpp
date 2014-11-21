@@ -63,12 +63,6 @@ void App2::Page1::txt256_SelectionChanged(Platform::Object^ sender, Windows::UI:
 }
 
 
-void App2::Page1::btnReturn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-	this->Frame->Navigate(App2::MainPage::typeid);
-}
-
-
 void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	const wchar_t* orig = txtInput->Text->ToString()->Data();
@@ -114,4 +108,9 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 	outputLabel->Text = stringValue;
 	App2::Stage1::Stage1(choice);
 	this->Frame->Navigate(App2::Stage1::typeid);
+}
+
+void App2::Page1::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	this->Frame->Navigate(App2::MainPage::typeid);
 }

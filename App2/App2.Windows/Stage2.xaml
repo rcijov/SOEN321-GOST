@@ -14,6 +14,11 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="113,65,0,0" TextWrapping="Wrap" Text="Stage 2" VerticalAlignment="Top" Height="34" Width="138" Foreground="#FF060606" FontSize="30"/>
-        <Button x:Name="btnStage3" Content="Stage 3" HorizontalAlignment="Left" Margin="1020,633,0,0" VerticalAlignment="Top" Background="#FFCF3D3D" Click="Button_Click" Height="73" Width="133"/>
+        <Button x:Name="btnStage3" Content="Stage 3" HorizontalAlignment="Left" Margin="1171,654,0,0" VerticalAlignment="Top" Background="#FFCF3D3D" Click="Button_Click" Height="73" Width="133" FontSize="30"/>
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="725,540,0,0" VerticalAlignment="Top" Height="79" Background="#FF41B8CB" Width="105" FontSize="30"/>
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="844,540,0,0" VerticalAlignment="Top" Height="79" Background="#FF41B8CB" Width="105" FontSize="30"/>
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="964,540,0,0" VerticalAlignment="Top" Height="79" Background="#FF41B8CB" Width="105" FontSize="30"/>
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="1081,540,0,0" VerticalAlignment="Top" Height="79" Background="#FF41B8CB" Width="105" FontSize="30"/>
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="1199,540,0,0" VerticalAlignment="Top" Height="79" Background="#FF41B8CB" Width="105" FontSize="30"/>
     </Grid>
 </Page>

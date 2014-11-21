@@ -8,6 +8,12 @@
     <Filter Include="Assets\Stage1">
       <UniqueIdentifier>{d99ce11d-d31e-4b3d-a1b4-5651f7e11f96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets\Stage2">
+      <UniqueIdentifier>{f9fbef40-c0f7-4a8a-921d-d6809f084dd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Stage3">
+      <UniqueIdentifier>{633f9102-86f8-4a88-9664-ea4f53d92e71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
@@ -63,6 +69,36 @@
     </Image>
     <Image Include="Assets\Stage1\5.png">
       <Filter>Assets\Stage1</Filter>
+    </Image>
+    <Image Include="Assets\Stage2\1.png">
+      <Filter>Assets\Stage2</Filter>
+    </Image>
+    <Image Include="Assets\Stage2\2.png">
+      <Filter>Assets\Stage2</Filter>
+    </Image>
+    <Image Include="Assets\Stage2\3.png">
+      <Filter>Assets\Stage2</Filter>
+    </Image>
+    <Image Include="Assets\Stage2\4.png">
+      <Filter>Assets\Stage2</Filter>
+    </Image>
+    <Image Include="Assets\Stage2\5.png">
+      <Filter>Assets\Stage2</Filter>
+    </Image>
+    <Image Include="Assets\Stage3\1.png">
+      <Filter>Assets\Stage3</Filter>
+    </Image>
+    <Image Include="Assets\Stage3\2.png">
+      <Filter>Assets\Stage3</Filter>
+    </Image>
+    <Image Include="Assets\Stage3\3.png">
+      <Filter>Assets\Stage3</Filter>
+    </Image>
+    <Image Include="Assets\Stage3\4.png">
+      <Filter>Assets\Stage3</Filter>
+    </Image>
+    <Image Include="Assets\Stage3\5.png">
+      <Filter>Assets\Stage3</Filter>
     </Image>
   </ItemGroup>
 </Project>
