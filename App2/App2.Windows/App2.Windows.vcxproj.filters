@@ -100,5 +100,8 @@
     <Image Include="Assets\Stage3\5.png">
       <Filter>Assets\Stage3</Filter>
     </Image>
+    <Image Include="Assets\main.png">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>
