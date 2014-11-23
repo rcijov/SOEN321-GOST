@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include "DemoMapPage.xaml.h"
 
 using namespace App2;
 
@@ -42,4 +43,10 @@ void App2::MainPage::btn512_Click(Platform::Object^ sender, Windows::UI::Xaml::R
 {
 	App2::Page1::Page1(526);
 	this->Frame->Navigate(App2::Page1::typeid);
+}
+
+void App2::MainPage::btnDemo_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	App2::DemoMapPage();
+	this->Frame->Navigate(App2::DemoMapPage::typeid);
 }

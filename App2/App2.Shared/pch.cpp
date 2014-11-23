@@ -11,6 +11,7 @@
 *      Author: Oleksandr Kazymyrov
 *		Acknowledgments: Oleksii Shevchuk
 */
+#pragma once
 
 #include "pch.h"
 #include <stdio.h>
@@ -18,6 +19,7 @@
 #include <memory.h>
 #include <math.h>
 #include "stribog_data.h" 
+#include "StateMapper.h"
 
 
 
@@ -176,9 +178,15 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 
 	auto app = safe_cast<App2::App^>(App2::App::Current);
 	
-	app->AddGOSTStep("S1_V", v512);
-	app->AddGOSTStep("S1_Sigma", Sigma);
-	app->AddGOSTStep("S1_N", N);
+	app->AddGOSTStep("S1_V", v512, 64);
+	app->AddGOSTStep("S1_Sigma", Sigma, 64);
+	app->AddGOSTStep("S1_N", N, 64);
+
+	app->stateMapper->setValue(App2::Value::INIT_EPSILON, Sigma, 64);
+	app->stateMapper->setValue(App2::Value::INIT_H, v512, 64);
+	app->stateMapper->setValue(App2::Value::INIT_N, N, 64);
+
+	app->stateMapper->setStep(App2::Step::STEP_1);
 
 	// Stage 2
 
@@ -189,13 +197,13 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 		memcpy(m, message + len / 8 - 63 - ((len & 0x7) == 0), 64);
 
 		g_N(N, hash, m);
-		app->AddGOSTStep("S2_" + iteration + "_gN", m);
+		app->AddGOSTStep("S2_" + iteration + "_gN", m, 64);
 
 		AddModulo512(N, v512, N);
-		app->AddGOSTStep("S2_" + iteration + "_modN", N);
+		app->AddGOSTStep("S2_" + iteration + "_modN", N, 64);
 
 		AddModulo512(Sigma, m, Sigma);
-		app->AddGOSTStep("S2_" + iteration + "_modSigma", Sigma);
+		app->AddGOSTStep("S2_" + iteration + "_modSigma", Sigma, 64);
 
 		len -= 512;
 		iteration += 1;
@@ -217,9 +225,9 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 	g_N(v0, hash, N);
 	g_N(v0, hash, Sigma);
 
-	app->AddGOSTStep("S3_hash", hash);
-
 	memcpy(out, hash, 64);
+
+	app->AddGOSTStep("S3_hash", hash, 64);
 }
 
 void Stribog::hash_512(const unsigned char *message, unsigned long long length, unsigned char *out)

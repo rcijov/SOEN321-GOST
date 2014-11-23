@@ -5,6 +5,12 @@
       <UniqueIdentifier>{45985df7-49ce-47c4-b223-f9139ad040bb}</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
+    <Filter Include="Demo">
+      <UniqueIdentifier>{6d5a4f32-b71d-407b-a2d1-faa0b3140049}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{f1871d60-5943-4251-a523-0401c936927b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
@@ -12,14 +18,45 @@
     <Page Include="Stage1.xaml" />
     <Page Include="Stage2.xaml" />
     <Page Include="Stage3.xaml" />
+    <Page Include="DemoMapPage.xaml">
+      <Filter>Demo</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainPage.xaml.cpp" />
     <ClCompile Include="Page1.xaml.cpp" />
+    <ClCompile Include="Stage1.xaml.cpp" />
+    <ClCompile Include="Stage2.xaml.cpp" />
+    <ClCompile Include="Stage3.xaml.cpp" />
+    <ClCompile Include="Common\NavigationHelper.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\RelayCommand.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\SuspensionManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="DemoMapPage.xaml.cpp" />
+    <ClCompile Include="StateMapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainPage.xaml.h" />
     <ClInclude Include="Page1.xaml.h" />
+    <ClInclude Include="Stage1.xaml.h" />
+    <ClInclude Include="Stage2.xaml.h" />
+    <ClInclude Include="Stage3.xaml.h" />
+    <ClInclude Include="Common\NavigationHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\RelayCommand.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\SuspensionManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoMapPage.xaml.h" />
+    <ClInclude Include="StateMapper.h" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />

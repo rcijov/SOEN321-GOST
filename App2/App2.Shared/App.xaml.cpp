@@ -35,6 +35,8 @@ App::App()
 	InitializeComponent();
 	Suspending += ref new SuspendingEventHandler(this, &App::OnSuspending);
 	App::intermediateLists = ref new Platform::Collections::Map < String^, String^>();
+
+	_stateMapper = ref new StateMapper();
 }
 
 /// <summary>
@@ -148,10 +150,10 @@ Platform::String^ App::GetGOSTStep(Platform::String^ hashStep)
 	return intermediateLists->Lookup(hashStep);
 }
 
-void App::AddGOSTStep(Platform::String^ hashStep, unsigned char* value)
+void App::AddGOSTStep(Platform::String^ hashStep, unsigned char* value, int length)
 {
 	String^ stringValue;
-	size_t length = strlen((const char *)value);
+	//size_t length = strlen((const char *)value);
 
 	for (size_t i = 0; i < length; i++)
 	{

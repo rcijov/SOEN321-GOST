@@ -28,6 +28,8 @@ void ::App2::MainPage::InitializeComponent()
     btn256 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btn256"));
     // Get the Button named 'btn512'
     btn512 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btn512"));
+    // Get the Button named 'btnDemo'
+    btnDemo = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnDemo"));
 }
 
 void ::App2::MainPage::Connect(int connectionId, Platform::Object^ target)
@@ -41,6 +43,10 @@ void ::App2::MainPage::Connect(int connectionId, Platform::Object^ target)
     case 2:
         (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
             ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::MainPage::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&MainPage::btn512_Click);
+        break;
+    case 3:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::MainPage::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&MainPage::btnDemo_Click);
         break;
     }
     (void)connectionId; // Unused parameter

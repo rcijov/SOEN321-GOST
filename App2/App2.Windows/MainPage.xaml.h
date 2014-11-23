@@ -20,5 +20,6 @@ namespace App2
 	private:
 		void btn256_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void btn512_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void btnDemo_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

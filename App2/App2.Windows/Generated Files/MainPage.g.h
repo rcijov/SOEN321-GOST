@@ -34,6 +34,7 @@ namespace App2
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtTitle;
         private: ::Windows::UI::Xaml::Controls::Button^ btn256;
         private: ::Windows::UI::Xaml::Controls::Button^ btn512;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnDemo;
     };
 }
 
