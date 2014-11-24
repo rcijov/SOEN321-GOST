@@ -14,10 +14,10 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="157,42,0,0" TextWrapping="Wrap" Text="Stage 2" VerticalAlignment="Top" Height="34" Width="138" Foreground="#FF060606" FontSize="30"/>
-        <Button x:Name="btnStage3" Content="Stage 3" HorizontalAlignment="Left" Margin="1186,694,0,0" VerticalAlignment="Top" Background="#FFCF3D3D" Click="Button_Click" Height="60" Width="133" FontSize="30"/>
-        <Button x:Name="btn1" Content="Overview" HorizontalAlignment="Left" Margin="894,616,0,0" VerticalAlignment="Top" Height="58" Background="#FF41B8CB" Width="160" FontSize="30" Click="btn1_Click"/>
-        <Button x:Name="btn2" Content="g_N" HorizontalAlignment="Left" Margin="1065,616,0,0" VerticalAlignment="Top" Height="58" Background="#FF41B8CB" Width="105" FontSize="30" Click="btn2_Click"/>
-        <Button x:Name="btn3" Content="Results" HorizontalAlignment="Left" Margin="1184,616,0,0" VerticalAlignment="Top" Height="58" Background="#FF41B8CB" Width="135" FontSize="30" Click="btn3_Click"/>
+        <Button x:Name="btnStage3" Content="Stage 3" HorizontalAlignment="Left" Margin="1218,697,0,0" VerticalAlignment="Top" Background="#FFCF3D3D" Click="Button_Click" Height="59" Width="133" FontSize="30" BorderBrush="Black"/>
+        <Button x:Name="btn1" Content="Overview" HorizontalAlignment="Left" Margin="926,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="160" FontSize="30" Click="btn1_Click" BorderBrush="Black"/>
+        <Button x:Name="btn2" Content="g_N" HorizontalAlignment="Left" Margin="1097,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="105" FontSize="30" Click="btn2_Click" BorderBrush="Black"/>
+        <Button x:Name="btn3" Content="Results" HorizontalAlignment="Left" Margin="1216,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="135" FontSize="30" Click="btn3_Click" BorderBrush="Black"/>
         <Image x:Name="imgBox2" HorizontalAlignment="Left" Height="611" Margin="142,99,0,0" VerticalAlignment="Top" Width="292"/>
         <TextBlock x:Name="txtCode2" HorizontalAlignment="Left" Margin="541,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775" Foreground="Black" FontSize="15"/>
         <TextBlock x:Name="txtExpl2" HorizontalAlignment="Left" Margin="541,288,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775" Foreground="Black" FontSize="15"/>
