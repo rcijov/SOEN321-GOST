@@ -215,16 +215,16 @@ Platform::String^ StateMapper::getStep2Value(Value valueIdentifier, int iteratio
 	case App2::Value::EPSILON:
 		return _2_EPSILON->GetAt(iteration);
 	case App2::Value::L:
-		_2_L->GetAt(iteration);
+		return _2_L->GetAt(iteration);
 		break;
 	case App2::Value::P:
-		_2_P->GetAt(iteration);
+		return _2_P->GetAt(iteration);
 		break;
 	case App2::Value::S:
-		_2_S->GetAt(iteration);
+		return _2_S->GetAt(iteration);
 		break;
 	case App2::Value::E:
-		_2_E->GetAt(iteration);
+		return _2_E->GetAt(iteration);
 		break;
 	default:
 		break;
@@ -242,16 +242,16 @@ Platform::String^ StateMapper::getStep3Value(Value valueIdentifier, int iteratio
 	case App2::Value::EPSILON:
 		return _3_EPSILON->GetAt(iteration);
 	case App2::Value::L:
-		_3_L->GetAt(iteration);
+		return _3_L->GetAt(iteration);
 		break;
 	case App2::Value::P:
-		_3_P->GetAt(iteration);
+		return _3_P->GetAt(iteration);
 		break;
 	case App2::Value::S:
-		_3_S->GetAt(iteration);
+		return _3_S->GetAt(iteration);
 		break;
 	case App2::Value::E:
-		_3_E->GetAt(iteration);
+		return _3_E->GetAt(iteration);
 		break;
 	default:
 		break;

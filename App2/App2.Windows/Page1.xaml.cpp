@@ -27,6 +27,7 @@ using namespace Windows::UI::Xaml::Navigation;
 #include "Stage3.xaml.h"
 
 unsigned char h256[32] = {};
+unsigned char h512[64] = {};
 int choice;
 
 void test_256()
@@ -78,7 +79,7 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 
 	unsigned char *newList = new unsigned char[lol];
 
-/*	for (size_t i = 0; i < strlen((char*)casted) / 2; i++)
+	for (size_t i = 0; i < strlen((char*)casted) / 2; i++)
 	{
 		unsigned int value = 0;
 
@@ -87,28 +88,45 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 		ss << std::hex << casted[2*i] << casted[2*i + 1];
 		ss >> value;
 
-		if (i > lol)
-			int a = 0;
-
 		newList[i] = value;
-	}*/
+	}
 
 	Stribog stri;
-
-	stri.hash_256(newList, (strlen((char*)casted) / 2) * 8, h256);
-	
 	String^ stringValue;
+
+	switch (choice)
+	{
+	case 256:
+		stri.hash_256(newList, (strlen((char*)casted) / 2) * 8, h256);
+
+		for (size_t i = 0; i < sizeof(h256); i++)
+		{
+			stringValue += h256[i].ToString();
+		}
+
+		break;
+	case 512:
+		stri.hash_512(newList, (strlen((char*)casted) / 2) * 8, h512);
+
+		for (size_t i = 0; i < sizeof(h512); i++)
+		{
+			stringValue += h512[i].ToString();
+		}
+
+		break;
+	default:
+		break;
+	}
 
 	for (size_t i = 0; i < sizeof(h256); i++)
 	{		
 		stringValue += h256[i].ToString();
 	}
 	
-<<<<<<< HEAD
+
 	//outputLabel->Text = stringValue;
-=======
+
 	App2::Stage3::Stage3(stringValue);
->>>>>>> dec8ac835c6dd9c4b89530bc76883688be8c481e
 	App2::Stage1::Stage1(choice);
 	this->Frame->Navigate(App2::Stage1::typeid);
 }
