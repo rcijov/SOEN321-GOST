@@ -13,6 +13,11 @@ StateMapper::StateMapper(StateMapper^ other)
 	_3_gN = ref new Platform::Collections::Vector<Platform::String^> ();
 	_3_N = ref new Platform::Collections::Vector<Platform::String^> ();
 	_3_EPSILON = ref new Platform::Collections::Vector<Platform::String^> ();
+
+	_2_L = ref new Platform::Collections::Vector<Platform::String^>();
+	_2_P = ref new Platform::Collections::Vector<Platform::String^>();
+	_2_S = ref new Platform::Collections::Vector<Platform::String^>();
+	_2_E = ref new Platform::Collections::Vector<Platform::String^>();
 };
 
 StateMapper::StateMapper()
@@ -25,6 +30,11 @@ StateMapper::StateMapper()
 	_3_gN = ref new Platform::Collections::Vector<Platform::String^>();
 	_3_N = ref new Platform::Collections::Vector<Platform::String^>();
 	_3_EPSILON = ref new Platform::Collections::Vector<Platform::String^>();
+
+	_3_L = ref new Platform::Collections::Vector<Platform::String^>();
+	_3_P = ref new Platform::Collections::Vector<Platform::String^>();
+	_3_S = ref new Platform::Collections::Vector<Platform::String^>();
+	_3_E = ref new Platform::Collections::Vector<Platform::String^>();
 }
 
 void StateMapper::setStep(Step step)
