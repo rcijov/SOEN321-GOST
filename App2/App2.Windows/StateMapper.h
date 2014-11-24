@@ -19,7 +19,11 @@ namespace App2
 		INIT_EPSILON,
 		G_N,
 		N,
-		EPSILON
+		EPSILON,
+		L,
+		P,
+		S,
+		E
 	};
 
 	public ref class StateMapper sealed
@@ -59,9 +63,10 @@ namespace App2
 		Platform::Collections::Vector<Platform::String^>^ _subM;
 		Platform::Collections::Vector<Platform::String^>^ _mPrime;
 
-		Platform::Collections::Vector<Platform::String^>^ _S;
-		Platform::Collections::Vector<Platform::String^>^ _P;
-		Platform::Collections::Vector<Platform::String^>^ _L;
+		Platform::Collections::Vector<Platform::String^>^ _2_S;
+		Platform::Collections::Vector<Platform::String^>^ _2_P;
+		Platform::Collections::Vector<Platform::String^>^ _2_L;
+		Platform::Collections::Vector<Platform::String^>^ _2_E;
 
 		//Step 3
 		void setStep3Value(Value valueIdentifier, unsigned char* value, int length);
@@ -70,5 +75,11 @@ namespace App2
 		Platform::Collections::Vector<Platform::String^>^ _3_gN;
 		Platform::Collections::Vector<Platform::String^>^ _3_N;
 		Platform::Collections::Vector<Platform::String^>^ _3_EPSILON;
+
+
+		Platform::Collections::Vector<Platform::String^>^ _3_S;
+		Platform::Collections::Vector<Platform::String^>^ _3_P;
+		Platform::Collections::Vector<Platform::String^>^ _3_L;
+		Platform::Collections::Vector<Platform::String^>^ _3_E;
 	};
 }

@@ -99,6 +99,18 @@ void StateMapper::setStep2Value(Value valueIdentifier, unsigned char* value, int
 	case App2::Value::EPSILON:
 		_2_EPSILON->Append(convertCharToString(value, length));
 		break;
+	case App2::Value::L:
+		_2_L->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::P:
+		_2_P->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::S:
+		_2_S->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::E:
+		_2_E->Append(convertCharToString(value, length));
+		break;
 
 	default:
 		break;
@@ -116,6 +128,18 @@ void StateMapper::setStep3Value(Value valueIdentifier, unsigned char* value, int
 		_3_N->Append(convertCharToString(value, length));
 	case App2::Value::EPSILON:
 		_3_EPSILON->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::L:
+		_3_L->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::P:
+		_3_P->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::S:
+		_3_S->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::E:
+		_3_E->Append(convertCharToString(value, length));
 		break;
 	default:
 		break;
@@ -170,6 +194,18 @@ Platform::String^ StateMapper::getStep2Value(Value valueIdentifier, int iteratio
 		return _2_N->GetAt(iteration);
 	case App2::Value::EPSILON:
 		return _2_EPSILON->GetAt(iteration);
+	case App2::Value::L:
+		_2_L->GetAt(iteration);
+		break;
+	case App2::Value::P:
+		_2_P->GetAt(iteration);
+		break;
+	case App2::Value::S:
+		_2_S->GetAt(iteration);
+		break;
+	case App2::Value::E:
+		_2_E->GetAt(iteration);
+		break;
 	default:
 		break;
 	}
@@ -185,6 +221,18 @@ Platform::String^ StateMapper::getStep3Value(Value valueIdentifier, int iteratio
 		return _3_N->GetAt(iteration);
 	case App2::Value::EPSILON:
 		return _3_EPSILON->GetAt(iteration);
+	case App2::Value::L:
+		_3_L->GetAt(iteration);
+		break;
+	case App2::Value::P:
+		_3_P->GetAt(iteration);
+		break;
+	case App2::Value::S:
+		_3_S->GetAt(iteration);
+		break;
+	case App2::Value::E:
+		_3_E->GetAt(iteration);
+		break;
 	default:
 		break;
 	}
