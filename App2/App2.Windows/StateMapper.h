@@ -16,7 +16,10 @@ namespace App2
 	{
 		INIT_H,
 		INIT_N,
-		INIT_EPSILON
+		INIT_EPSILON,
+		G_N,
+		N,
+		EPSILON
 	};
 
 	public ref class StateMapper sealed
@@ -49,6 +52,10 @@ namespace App2
 		void setStep2Value(Value valueIdentifier, unsigned char* value, int length);
 		Platform::String^ getStep2Value(Value valueIdentifier, int length);
 
+		Platform::Collections::Vector<Platform::String^>^ _2_gN;
+		Platform::Collections::Vector<Platform::String^>^ _2_N;
+		Platform::Collections::Vector<Platform::String^>^ _2_EPSILON;
+
 		Platform::Collections::Vector<Platform::String^>^ _subM;
 		Platform::Collections::Vector<Platform::String^>^ _mPrime;
 
@@ -59,5 +66,9 @@ namespace App2
 		//Step 3
 		void setStep3Value(Value valueIdentifier, unsigned char* value, int length);
 		Platform::String^ getStep3Value(Value valueIdentifier, int length);
+
+		Platform::Collections::Vector<Platform::String^>^ _3_gN;
+		Platform::Collections::Vector<Platform::String^>^ _3_N;
+		Platform::Collections::Vector<Platform::String^>^ _3_EPSILON;
 	};
 }

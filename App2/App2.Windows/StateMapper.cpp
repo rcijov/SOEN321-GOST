@@ -6,11 +6,25 @@ using namespace App2;
 StateMapper::StateMapper(StateMapper^ other)
 {
 	currentStep = Step::STEP_1;
+	_2_gN = ref new Platform::Collections::Vector<Platform::String^> ();
+	_2_N = ref new Platform::Collections::Vector<Platform::String^> ();
+	_2_EPSILON = ref new Platform::Collections::Vector<Platform::String^> ();
+	
+	_3_gN = ref new Platform::Collections::Vector<Platform::String^> ();
+	_3_N = ref new Platform::Collections::Vector<Platform::String^> ();
+	_3_EPSILON = ref new Platform::Collections::Vector<Platform::String^> ();
 };
 
 StateMapper::StateMapper()
 {
 	currentStep = Step::STEP_1;
+	_2_gN = ref new Platform::Collections::Vector<Platform::String^>();
+	_2_N = ref new Platform::Collections::Vector<Platform::String^>();
+	_2_EPSILON = ref new Platform::Collections::Vector<Platform::String^>();
+
+	_3_gN = ref new Platform::Collections::Vector<Platform::String^>();
+	_3_N = ref new Platform::Collections::Vector<Platform::String^>();
+	_3_EPSILON = ref new Platform::Collections::Vector<Platform::String^>();
 }
 
 void StateMapper::setStep(Step step)
@@ -74,12 +88,38 @@ void StateMapper::setStep1Value(Value valueIdentifier, unsigned char* value, int
 
 void StateMapper::setStep2Value(Value valueIdentifier, unsigned char* value, int length)
 {
+	switch (valueIdentifier)
+	{
+	case App2::Value::G_N:
+		_2_gN->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::N :
+		_2_N->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::EPSILON:
+		_2_EPSILON->Append(convertCharToString(value, length));
+		break;
 
+	default:
+		break;
+	}
 }
 
 void StateMapper::setStep3Value(Value valueIdentifier, unsigned char* value, int length)
 {
-
+	switch (valueIdentifier)
+	{
+	case App2::Value::G_N:
+		_3_gN->Append(convertCharToString(value, length));
+		break;
+	case App2::Value::N:
+		_3_N->Append(convertCharToString(value, length));
+	case App2::Value::EPSILON:
+		_3_EPSILON->Append(convertCharToString(value, length));
+		break;
+	default:
+		break;
+	}
 }
 
 Platform::String^ StateMapper::getValue(Value value, int iteration)
@@ -108,21 +148,44 @@ Platform::String^ StateMapper::getStep1Value(Value valueIdentifier)
 	{
 	case App2::Value::INIT_H:
 		return _initialHash;
+
 	case App2::Value::INIT_N:
 		return _initialN;
+
 	case App2::Value::INIT_EPSILON:
 		return _initialEpsilon;
+
 	default:
 		return L"Invalid Value for Step 1";
 	}
 }
 
-Platform::String^ StateMapper::getStep2Value(Value valueIdentifier, int length)
+Platform::String^ StateMapper::getStep2Value(Value valueIdentifier, int iteration)
 {
-	return L"";
+	switch (valueIdentifier)
+	{
+	case App2::Value::G_N:
+		return _2_gN->GetAt(iteration);
+	case App2::Value::N:
+		return _2_N->GetAt(iteration);
+	case App2::Value::EPSILON:
+		return _2_EPSILON->GetAt(iteration);
+	default:
+		break;
+	}
 }
 
-Platform::String^ StateMapper::getStep3Value(Value valueIdentifier, int length)
+Platform::String^ StateMapper::getStep3Value(Value valueIdentifier, int iteration)
 {
-	return L"";
+	switch (valueIdentifier)
+	{
+	case App2::Value::G_N:
+		return _3_gN->GetAt(iteration);
+	case App2::Value::N:
+		return _3_N->GetAt(iteration);
+	case App2::Value::EPSILON:
+		return _3_EPSILON->GetAt(iteration);
+	default:
+		break;
+	}
 }

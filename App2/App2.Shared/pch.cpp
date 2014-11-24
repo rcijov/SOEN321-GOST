@@ -177,19 +177,15 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 	unsigned long long len = length;
 
 	auto app = safe_cast<App2::App^>(App2::App::Current);
-	
-	app->AddGOSTStep("S1_V", v512, 64);
-	app->AddGOSTStep("S1_Sigma", Sigma, 64);
-	app->AddGOSTStep("S1_N", N, 64);
-
-	app->stateMapper->setValue(App2::Value::INIT_EPSILON, Sigma, 64);
-	app->stateMapper->setValue(App2::Value::INIT_H, v512, 64);
-	app->stateMapper->setValue(App2::Value::INIT_N, N, 64);
 
 	app->stateMapper->setStep(App2::Step::STEP_1);
 
-	// Stage 2
+	app->stateMapper->setValue(App2::Value::INIT_EPSILON, Sigma, 64);
+	app->stateMapper->setValue(App2::Value::INIT_H, hash, 64);
+	app->stateMapper->setValue(App2::Value::INIT_N, N, 64);	
 
+	// Stage 2
+	app->stateMapper->setStep(App2::Step::STEP_2);
 	int iteration = 1;
 
 	while (len >= 512)
@@ -197,13 +193,13 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 		memcpy(m, message + len / 8 - 63 - ((len & 0x7) == 0), 64);
 
 		g_N(N, hash, m);
-		app->AddGOSTStep("S2_" + iteration + "_gN", m, 64);
+		app->stateMapper->setValue(App2::Value::G_N, hash, 64);
 
 		AddModulo512(N, v512, N);
-		app->AddGOSTStep("S2_" + iteration + "_modN", N, 64);
+		app->stateMapper->setValue(App2::Value::N, N, 64);
 
 		AddModulo512(Sigma, m, Sigma);
-		app->AddGOSTStep("S2_" + iteration + "_modSigma", Sigma, 64);
+		app->stateMapper->setValue(App2::Value::EPSILON, Sigma, 64);
 
 		len -= 512;
 		iteration += 1;
@@ -213,17 +209,27 @@ void Stribog::hash_X(unsigned char *IV, const unsigned char *message, unsigned l
 	memcpy(m + 63 - len / 8 + ((len & 0x7) == 0), message, len / 8 + 1 - ((len & 0x7) == 0));
 
 	// Stage 3
+	app->stateMapper->setStep(App2::Step::STEP_3);
+
 	m[63 - len / 8] |= (1 << (len & 0x7));
 
 	g_N(N, hash, m);
+	app->stateMapper->setValue(App2::Value::G_N, hash, 64);
+
 	v512[63] = len & 0xFF;
 	v512[62] = len >> 8;
+
 	AddModulo512(N, v512, N);
+	app->stateMapper->setValue(App2::Value::N, N, 64);
 
 	AddModulo512(Sigma, m, Sigma);
+	app->stateMapper->setValue(App2::Value::EPSILON, Sigma, 64);
 
 	g_N(v0, hash, N);
+	app->stateMapper->setValue(App2::Value::G_N, hash, 64);
+
 	g_N(v0, hash, Sigma);
+	app->stateMapper->setValue(App2::Value::G_N, hash, 64);
 
 	memcpy(out, hash, 64);
 
