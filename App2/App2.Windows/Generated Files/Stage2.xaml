@@ -22,6 +22,18 @@
         <TextBlock x:Name="txtCode2" HorizontalAlignment="Left" Margin="541,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775" Foreground="Black" FontSize="15"/>
         <TextBlock x:Name="txtExpl2" HorizontalAlignment="Left" Margin="541,288,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775" Foreground="Black" FontSize="15"/>
         <Button x:ConnectionId='5' x:Name="btnBackP2" Content="Back" HorizontalAlignment="Left" Margin="36,36,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White"                         />
+        <Button x:ConnectionId='6' x:Name="btnE1" Content="1" HorizontalAlignment="Left" Margin="702,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='7' x:Name="btnE2" Content="2" HorizontalAlignment="Left" Margin="753,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='8' x:Name="btnE3" Content="3" HorizontalAlignment="Left" Margin="804,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='9' x:Name="btnE4" Content="4" HorizontalAlignment="Left" Margin="856,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='10' x:Name="btnE5" Content="5" HorizontalAlignment="Left" Margin="907,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='11' x:Name="btnE6" Content="6" HorizontalAlignment="Left" Margin="958,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='12' x:Name="btnE7" Content="7" HorizontalAlignment="Left" Margin="1009,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='13' x:Name="btnE8" Content="8" HorizontalAlignment="Left" Margin="1060,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='14' x:Name="btnE9" Content="9" HorizontalAlignment="Left" Margin="1111,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
+        <Button x:ConnectionId='15' x:Name="btnE10" Content="10" HorizontalAlignment="Left" Margin="1162,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black"                     />
+        <Button x:ConnectionId='16' x:Name="btnE11" Content="11" HorizontalAlignment="Left" Margin="1225,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black"                     />
+        <Button x:ConnectionId='17' x:Name="btnE12" Content="12" HorizontalAlignment="Left" Margin="1288,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black"                     />
     </Grid>
 </Page>
 

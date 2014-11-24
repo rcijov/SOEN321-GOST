@@ -40,6 +40,30 @@ void ::App2::Stage2::InitializeComponent()
     txtExpl2 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtExpl2"));
     // Get the Button named 'btnBackP2'
     btnBackP2 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnBackP2"));
+    // Get the Button named 'btnE1'
+    btnE1 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE1"));
+    // Get the Button named 'btnE2'
+    btnE2 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE2"));
+    // Get the Button named 'btnE3'
+    btnE3 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE3"));
+    // Get the Button named 'btnE4'
+    btnE4 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE4"));
+    // Get the Button named 'btnE5'
+    btnE5 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE5"));
+    // Get the Button named 'btnE6'
+    btnE6 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE6"));
+    // Get the Button named 'btnE7'
+    btnE7 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE7"));
+    // Get the Button named 'btnE8'
+    btnE8 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE8"));
+    // Get the Button named 'btnE9'
+    btnE9 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE9"));
+    // Get the Button named 'btnE10'
+    btnE10 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE10"));
+    // Get the Button named 'btnE11'
+    btnE11 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE11"));
+    // Get the Button named 'btnE12'
+    btnE12 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnE12"));
 }
 
 void ::App2::Stage2::Connect(int connectionId, Platform::Object^ target)
@@ -65,6 +89,54 @@ void ::App2::Stage2::Connect(int connectionId, Platform::Object^ target)
     case 5:
         (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
             ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnBackP2_Click);
+        break;
+    case 6:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE1_Click);
+        break;
+    case 7:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE2_Click);
+        break;
+    case 8:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE3_Click);
+        break;
+    case 9:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE4_Click);
+        break;
+    case 10:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE5_Click);
+        break;
+    case 11:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE6_Click);
+        break;
+    case 12:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE7_Click);
+        break;
+    case 13:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE8_Click);
+        break;
+    case 14:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE9_Click);
+        break;
+    case 15:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE10_Click);
+        break;
+    case 16:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE11_Click);
+        break;
+    case 17:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage2::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage2::btnE12_Click);
         break;
     }
     (void)connectionId; // Unused parameter

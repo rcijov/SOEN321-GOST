@@ -41,6 +41,18 @@ namespace App2
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtCode2;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtExpl2;
         private: ::Windows::UI::Xaml::Controls::Button^ btnBackP2;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE1;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE2;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE3;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE4;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE5;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE6;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE7;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE8;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE9;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE10;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE11;
+        private: ::Windows::UI::Xaml::Controls::Button^ btnE12;
     };
 }
 
