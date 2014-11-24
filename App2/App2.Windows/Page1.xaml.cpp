@@ -68,9 +68,8 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 	const wchar_t* orig = txtInput->Text->ToString()->Data();
 	size_t origsize = wcslen(orig) + 1;
 	size_t convertedChars = 0;
-	char dst[256];
+	char dst[1024];
 	wcstombs_s(&convertedChars, dst, origsize, orig, _TRUNCATE);
-
 
 	unsigned char* casted = reinterpret_cast<unsigned char*>(dst);
 
@@ -78,7 +77,7 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 
 	unsigned char *newList = new unsigned char[lol];
 
-	for (size_t i = 0; i < strlen((char*)casted) / 2; i++)
+/*	for (size_t i = 0; i < strlen((char*)casted) / 2; i++)
 	{
 		unsigned int value = 0;
 
@@ -91,21 +90,20 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 			int a = 0;
 
 		newList[i] = value;
-	}
+	}*/
 
 	Stribog stri;
 
 	stri.hash_256(newList, (strlen((char*)casted) / 2) * 8, h256);
 	
 	String^ stringValue;
-	std::stringstream ss;
 
 	for (size_t i = 0; i < sizeof(h256); i++)
 	{		
 		stringValue += h256[i].ToString();
 	}
 	
-	outputLabel->Text = stringValue;
+	//outputLabel->Text = stringValue;
 	App2::Stage1::Stage1(choice);
 	this->Frame->Navigate(App2::Stage1::typeid);
 }

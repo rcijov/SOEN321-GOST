@@ -115,6 +115,8 @@ void Stribog::KeySchedule(unsigned char *K, int i)
 
 void Stribog::E(unsigned char *K, const unsigned char *m, unsigned char *state)
 {
+	auto app = safe_cast<App2::App^>(App2::App::Current);
+
 	int i = 0;
 
 	memcpy(K, K, 64);
@@ -124,32 +126,34 @@ void Stribog::E(unsigned char *K, const unsigned char *m, unsigned char *state)
 	for (i = 0; i<12; i++)
 	{
 		S(state);
+		app->stateMapper->setValue(App2::Value::S, state, 64);
+		
 		P(state);
+
+		app->stateMapper->setValue(App2::Value::P, state, 64);
 		L(state);
+
+		app->stateMapper->setValue(App2::Value::L, state, 64);
+
+
 		KeySchedule(K, i);
 		AddXor512(state, K, state);
 	}
+
+	app->stateMapper->setValue(App2::Value::E, K, 64);
 }
 
 void Stribog::g_N(const unsigned char *N, unsigned char *h, const unsigned char *m)
 {
-	auto app = safe_cast<App2::App^>(App2::App::Current);
-
 	unsigned char t[64], K[64];
 
 	AddXor512(N, h, K);
 
 	S(K);
-	app->stateMapper->setValue(App2::Value::S, K, 64);
-
 	P(K);
-	app->stateMapper->setValue(App2::Value::P, K, 64);
-
 	L(K);
-	app->stateMapper->setValue(App2::Value::L, K, 64);
 
 	E(K, m, t);
-	app->stateMapper->setValue(App2::Value::E, K, 64);
 
 	AddXor512(t, h, t);
 	AddXor512(t, m, h);
