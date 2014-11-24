@@ -15,7 +15,7 @@
         </Grid.Background>
         <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="179,40,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" FontSize="30" Foreground="Black"/>
         <Image x:Name="imgBox" HorizontalAlignment="Left" Height="633" Margin="142,99,0,0" VerticalAlignment="Top" Width="153"/>
-        <Button x:ConnectionId='1' Content="Stage 2" HorizontalAlignment="Left" Margin="1171,668,0,0" VerticalAlignment="Top" Background="#FFCF3D3D"                      Height="40" Width="90" FontSize="15" BorderBrush="Black"/>
+        <Button x:ConnectionId='1' Content="Stage 2" HorizontalAlignment="Left" Margin="1171,668,0,0" VerticalAlignment="Top" Background="#FFCF3D3D"                      Height="59" Width="133" FontSize="30" BorderBrush="Black"/>
         <TextBlock x:Name="txtCode" HorizontalAlignment="Left" Margin="355,133,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775" Foreground="Black" FontSize="15"/>
         <TextBlock x:Name="txtExpl" HorizontalAlignment="Left" Margin="355,369,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775" Foreground="Black" FontSize="15"/>
         <Button x:ConnectionId='2' x:Name="btnBackP1" Content="Back" HorizontalAlignment="Left" Margin="36,36,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White"                        />

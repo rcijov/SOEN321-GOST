@@ -29,7 +29,23 @@ Stage2::Stage2()
 {
 	InitializeComponent();
 	imgBox2->Source = ref new BitmapImage(ref new Uri("ms-appx:///Assets/Stage2/Stage2a.jpg"));
-	txtCode2->Text = "H : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_H, 0) + "\n";
+	btn1->Visibility = Windows::UI::Xaml::Visibility::Visible;
+	btn2->Visibility = Windows::UI::Xaml::Visibility::Visible;
+	btn3->Visibility = Windows::UI::Xaml::Visibility::Visible;
+	try{
+		txtCode2->Text = "N : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::N, 0) + "\n";
+		txtCode2->Text = "H : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::INIT_H, 0) + "\n";
+		txtCode2->Text = "Epsilon : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::EPSILON, 0) + "\n";
+		txtExpl2->Text = "Stage 2 involves breaking the overall message down into sub - messages and hashing them. In the event where the original message is less than or equal to 512 bits then stage 2 is skipped."
+			+ "\n" + "In this stage each message block is hashed using the function g_N(). After hashing has occurred, the message length N and control sum Sigma are updated.";
+	}
+	catch (Platform::Exception^)
+	{
+		txtExpl2->Text = "There is no stage 2 because the length of the message is less than 512 characters.";
+		btn1->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+		btn2->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+		btn3->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+	}
 }
 
 
@@ -48,25 +64,57 @@ void App2::Stage2::btnBackP2_Click(Platform::Object^ sender, Windows::UI::Xaml::
 void App2::Stage2::btn1_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	imgBox2->Source = ref new BitmapImage(ref new Uri("ms-appx:///Assets/Stage2/Stage2a.jpg"));
-	txtCode2->Text = "N : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::N, 0) + "\n";
-	txtCode2->Text = "Epsilon : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::EPSILON, 0) + "\n";
-	txtExpl2->Text = "Stage 2 involves breaking the overall message down into sub - messages and hashing them. In the event where the original message is less than or equal to 512 bits then stage 2 is skipped."
-		+ "\n" + "In this stage each message block is hashed using the function g_N(). After hashing has occurred, the message length N and control sum Sigma are updated.";
+	try{
+		txtCode2->Text = "N : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::N, 0) + "\n";
+		txtCode2->Text = "H : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::INIT_H, 0) + "\n";
+		txtCode2->Text = "Epsilon : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::EPSILON, 0) + "\n";
+		txtExpl2->Text = "Stage 2 involves breaking the overall message down into sub - messages and hashing them. In the event where the original message is less than or equal to 512 bits then stage 2 is skipped."
+			+ "\n" + "In this stage each message block is hashed using the function g_N(). After hashing has occurred, the message length N and control sum Sigma are updated.";
+	}
+	catch (Platform::Exception^)
+	{
+		txtExpl2->Text = "There is no stage 2 because the length of the message is less than 512 characters.";
+		btn1->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+		btn2->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+		btn3->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+	}
 }
 
 
 void App2::Stage2::btn2_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	imgBox2->Source = ref new BitmapImage(ref new Uri("ms-appx:///Assets/Stage2/Stage2b.jpg"));
-	txtCode2->Text = "H : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_H, 0) + "\n";
+	try{
+		imgBox2->Source = ref new BitmapImage(ref new Uri("ms-appx:///Assets/Stage2/Stage2b.jpg"));
+		txtCode2->Text = "N : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::N, 0) + "\n";
+		txtCode2->Text = "H : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::INIT_H, 0) + "\n";
+		txtCode2->Text = "Epsilon : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::EPSILON, 0) + "\n";
+		txtExpl2->Text = "Stage 2 involves breaking the overall message down into sub - messages and hashing them. In the event where the original message is less than or equal to 512 bits then stage 2 is skipped."
+			+ "\n" + "In this stage each message block is hashed using the function g_N(). After hashing has occurred, the message length N and control sum Sigma are updated.";
+	}
+	catch (Platform::Exception^)
+	{
+		txtExpl2->Text = "There is no stage 2 because the length of the message is less than 512 characters.";
+		btn1->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+		btn2->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+		btn3->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+	}
 }
 
 
 void App2::Stage2::btn3_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	imgBox2->Source = ref new BitmapImage(ref new Uri("ms-appx:///Assets/Stage2/Stage2a.jpg"));
-	txtCode2->Text = "N : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::N, 0) + "\n";
-	txtCode2->Text = "Epsilon : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::EPSILON, 0) + "\n";
-	txtExpl2->Text = "Stage 2 involves breaking the overall message down into sub - messages and hashing them. In the event where the original message is less than or equal to 512 bits then stage 2 is skipped."
-		+ "\n" + "In this stage each message block is hashed using the function g_N(). After hashing has occurred, the message length N and control sum Sigma are updated.";
+	try{
+		txtCode2->Text = "N : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::N, 0) + "\n";
+		txtCode2->Text = "H : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::INIT_H, 0) + "\n";
+		txtCode2->Text = "Epsilon : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_2, App2::Value::EPSILON, 0) + "\n";
+		txtExpl2->Text = "Stage 2 involves breaking the overall message down into sub - messages and hashing them. In the event where the original message is less than or equal to 512 bits then stage 2 is skipped."
+			+ "\n" + "In this stage each message block is hashed using the function g_N(). After hashing has occurred, the message length N and control sum Sigma are updated.";
+	}
+	catch (Platform::Exception^)
+	{
+		txtExpl2->Text = "There is no stage 2 because the length of the message is less than 512 characters.";
+		btn1->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+		btn2->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+		btn3->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
+	}
 }
