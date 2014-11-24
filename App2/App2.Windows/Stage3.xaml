@@ -13,5 +13,6 @@
                 <GradientStop Color="#F8F8F8" Offset="1" />
             </LinearGradientBrush>
         </Grid.Background>
+        <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="113,65,0,0" TextWrapping="Wrap" Text="Stage 3" VerticalAlignment="Top" Height="34" Width="138" Foreground="#FF060606" FontSize="30"/>
     </Grid>
 </Page>

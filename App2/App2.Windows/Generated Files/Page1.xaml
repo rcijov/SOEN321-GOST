@@ -13,11 +13,12 @@
                 <GradientStop Color="#F8F8F8" Offset="1" />
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock x:ConnectionId='1' x:Name="txtTitle" HorizontalAlignment="Left" Foreground="Black"  Margin="212,163,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" FontSize="30"                                           />
-        <Button x:ConnectionId='2' x:Name="btnReturn" Content="&lt;" HorizontalAlignment="Left" Margin="85,48,0,0" VerticalAlignment="Top" Foreground="Black" RenderTransformOrigin="0.5,0.5" Background="#B3E8D731" Height="77" Width="66" FontSize="30"                        />
-        <TextBox x:Name="txtInput" HorizontalAlignment="Left" Margin="212,263,0,0" TextWrapping="Wrap" Text="Input" VerticalAlignment="Top"/>
-        <Button x:ConnectionId='3' Content="Button" HorizontalAlignment="Left" Margin="215,354,0,0" VerticalAlignment="Top"                     />
-        <TextBlock x:Name="outputLabel" HorizontalAlignment="Left" Margin="398,254,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="244" Width="529" Foreground="Black"/>
+        <TextBlock x:ConnectionId='1' x:Name="txtTitle" HorizontalAlignment="Left" Foreground="Black"  Margin="493,272,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" FontSize="30"                                           />
+        <TextBox x:Name="txtInput" HorizontalAlignment="Left" Margin="493,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457"/>
+        <Button x:ConnectionId='2' Content="Hash" HorizontalAlignment="Left" Margin="834,448,0,0" VerticalAlignment="Top"                      Background="#FFAFAADC" BorderBrush="Black" Height="44" Width="117"/>
+        <TextBlock x:Name="outputLabel" HorizontalAlignment="Left" Margin="817,629,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="210" Foreground="Black"/>
+        <Button x:ConnectionId='3' Content="Back" HorizontalAlignment="Left" Margin="136,99,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White"                       />
+        <TextBlock HorizontalAlignment="Left" Margin="493,361,0,0" TextWrapping="Wrap" Text="Please enter the message to hash and press on the &quot;Hash&quot; button." VerticalAlignment="Top" Foreground="Black" FontSize="15"/>
 
     </Grid>
 </Page>

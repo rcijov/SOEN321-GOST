@@ -183,7 +183,23 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Logo.scale-100.png" />
+    <Image Include="Assets\main.png" />
     <Image Include="Assets\SmallLogo.scale-100.png" />
+    <Image Include="Assets\Stage1\1.png" />
+    <Image Include="Assets\Stage1\2.png" />
+    <Image Include="Assets\Stage1\3.png" />
+    <Image Include="Assets\Stage1\4.png" />
+    <Image Include="Assets\Stage1\5.png" />
+    <Image Include="Assets\Stage2\1.png" />
+    <Image Include="Assets\Stage2\2.png" />
+    <Image Include="Assets\Stage2\3.png" />
+    <Image Include="Assets\Stage2\4.png" />
+    <Image Include="Assets\Stage2\5.png" />
+    <Image Include="Assets\Stage3\1.png" />
+    <Image Include="Assets\Stage3\2.png" />
+    <Image Include="Assets\Stage3\3.png" />
+    <Image Include="Assets\Stage3\4.png" />
+    <Image Include="Assets\Stage3\5.png" />
     <Image Include="Assets\StoreLogo.scale-100.png" />
     <Image Include="Assets\SplashScreen.scale-100.png" />
   </ItemGroup>

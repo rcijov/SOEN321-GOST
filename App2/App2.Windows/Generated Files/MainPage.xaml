@@ -13,11 +13,11 @@
                 <GradientStop Color="#F8F8F8" Offset="1" />
             </LinearGradientBrush>
         </Grid.Background>
-        
-        <TextBlock x:Name="txtTitle" Margin="328,172,0,0"  Foreground="Black"  TextWrapping="Wrap" Text="GOST R 34.11-2012: Hash Function" VerticalAlignment="Top" FontSize="30" HorizontalAlignment="Left" />
-        <Button x:ConnectionId='1' x:Name="btn256" Content="256" Foreground="Black"  HorizontalAlignment="Left" Margin="367,321,0,0" VerticalAlignment="Top" Height="49" Width="154" Background="#B3E8E8E8"                      RequestedTheme="Dark"/>
-        <Button x:ConnectionId='2' x:Name="btn512" Content="512" Foreground="Black" HorizontalAlignment="Left" Margin="576,321,0,0" VerticalAlignment="Top" Height="49" Width="154" Background="#B3E8E8E8"                     />
-        <Button x:ConnectionId='3' x:Name="btnDemo" Content="Reader Demo" Foreground="Black" HorizontalAlignment="Left" Margin="776,321,0,0" VerticalAlignment="Top" Height="49" Width="154" Background="#B3E8E8E8"                      />
+
+        <TextBlock x:Name="txtTitle" Margin="486,267,0,0"  Foreground="Black"  TextWrapping="Wrap" Text="GOST R 34.11-2012: Hash Function" VerticalAlignment="Top" FontSize="30" HorizontalAlignment="Left" />
+        <Button x:ConnectionId='1' x:Name="btn256" Content="256" Foreground="White"  HorizontalAlignment="Left" Margin="525,472,0,0" VerticalAlignment="Top" Height="49" Width="154" Background="#B3699996"                      RequestedTheme="Dark" BorderBrush="Black"/>
+        <Button x:ConnectionId='2' x:Name="btn512" Content="512" Foreground="White" HorizontalAlignment="Left" Margin="734,472,0,0" VerticalAlignment="Top" Height="49" Width="154" Background="#B386A255"                      BorderBrush="Black"/>
+        <Image HorizontalAlignment="Left" Height="89" Margin="594,338,0,0" VerticalAlignment="Top" Width="260" Source="Assets/main.png"/>
     </Grid>
 </Page>
 

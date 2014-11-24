@@ -22,6 +22,8 @@ void ::App2::Stage3::InitializeComponent()
     // Call LoadComponent on ms-appx:///Stage3.xaml
     ::Windows::UI::Xaml::Application::LoadComponent(this, ref new ::Windows::Foundation::Uri(L"ms-appx:///Stage3.xaml"), ::Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation::Application);
 
+    // Get the TextBlock named 'txtTitle'
+    txtTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtTitle"));
 }
 
 void ::App2::Stage3::Connect(int connectionId, Platform::Object^ target)

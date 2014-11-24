@@ -18,5 +18,14 @@ namespace App2
 	public:
 		Stage1();
 		Stage1(int c);
+	private:
+		void Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void btn1_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void btn2_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void btn4_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void btn5_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void btn3_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void btnBackP1_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }
