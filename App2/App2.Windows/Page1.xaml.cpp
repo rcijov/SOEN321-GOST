@@ -24,6 +24,7 @@ using namespace Windows::UI::Xaml::Navigation;
 #include "MainPage.xaml.h"
 #include "stribog_test_data.h"
 #include "Stage1.xaml.h"
+#include "Stage3.xaml.h"
 
 unsigned char h256[32] = {};
 int choice;
@@ -103,7 +104,11 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 		stringValue += h256[i].ToString();
 	}
 	
+<<<<<<< HEAD
 	//outputLabel->Text = stringValue;
+=======
+	App2::Stage3::Stage3(stringValue);
+>>>>>>> dec8ac835c6dd9c4b89530bc76883688be8c481e
 	App2::Stage1::Stage1(choice);
 	this->Frame->Navigate(App2::Stage1::typeid);
 }

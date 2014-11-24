@@ -24,10 +24,27 @@ void ::App2::Stage3::InitializeComponent()
 
     // Get the TextBlock named 'txtTitle'
     txtTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtTitle"));
+    // Get the Button named 'btnBackP3'
+    btnBackP3 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnBackP3"));
+    // Get the Image named 'imgBox3'
+    imgBox3 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"imgBox3"));
+    // Get the TextBlock named 'txtCode3'
+    txtCode3 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtCode3"));
+    // Get the TextBlock named 'txtExpl3'
+    txtExpl3 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtExpl3"));
+    // Get the Button named 'btnResult'
+    btnResult = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnResult"));
 }
 
 void ::App2::Stage3::Connect(int connectionId, Platform::Object^ target)
 {
+    switch (connectionId)
+    {
+    case 1:
+        (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Stage3::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Stage3::btnBackP3_Click);
+        break;
+    }
     (void)connectionId; // Unused parameter
     (void)target; // Unused parameter
     _contentLoaded = true;
