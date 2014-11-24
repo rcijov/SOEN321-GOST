@@ -34,11 +34,6 @@ namespace App2
     
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtTitle;
         private: ::Windows::UI::Xaml::Controls::Image^ imgBox;
-        private: ::Windows::UI::Xaml::Controls::Button^ btn1;
-        private: ::Windows::UI::Xaml::Controls::Button^ btn2;
-        private: ::Windows::UI::Xaml::Controls::Button^ btn3;
-        private: ::Windows::UI::Xaml::Controls::Button^ btn4;
-        private: ::Windows::UI::Xaml::Controls::Button^ btn5;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtCode;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtExpl;
         private: ::Windows::UI::Xaml::Controls::Button^ btnBackP1;

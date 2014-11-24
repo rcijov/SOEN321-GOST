@@ -21,6 +21,7 @@
     <Page Include="Stage1.xaml" />
     <Page Include="Stage2.xaml" />
     <Page Include="Stage3.xaml" />
+    <Page Include="DemoMapPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainPage.xaml.cpp" />
@@ -28,6 +29,11 @@
     <ClCompile Include="Stage1.xaml.cpp" />
     <ClCompile Include="Stage2.xaml.cpp" />
     <ClCompile Include="Stage3.xaml.cpp" />
+    <ClCompile Include="Common\NavigationHelper.cpp" />
+    <ClCompile Include="Common\RelayCommand.cpp" />
+    <ClCompile Include="Common\SuspensionManager.cpp" />
+    <ClCompile Include="DemoMapPage.xaml.cpp" />
+    <ClCompile Include="StateMapper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainPage.xaml.h" />
@@ -35,6 +41,11 @@
     <ClInclude Include="Stage1.xaml.h" />
     <ClInclude Include="Stage2.xaml.h" />
     <ClInclude Include="Stage3.xaml.h" />
+    <ClInclude Include="Common\NavigationHelper.h" />
+    <ClInclude Include="Common\RelayCommand.h" />
+    <ClInclude Include="Common\SuspensionManager.h" />
+    <ClInclude Include="DemoMapPage.xaml.h" />
+    <ClInclude Include="StateMapper.h" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -55,53 +66,26 @@
     <Image Include="Assets\SplashScreen.scale-100.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\Stage1\1.png">
-      <Filter>Assets\Stage1</Filter>
-    </Image>
-    <Image Include="Assets\Stage1\2.png">
-      <Filter>Assets\Stage1</Filter>
-    </Image>
-    <Image Include="Assets\Stage1\3.png">
-      <Filter>Assets\Stage1</Filter>
-    </Image>
-    <Image Include="Assets\Stage1\4.png">
-      <Filter>Assets\Stage1</Filter>
-    </Image>
-    <Image Include="Assets\Stage1\5.png">
-      <Filter>Assets\Stage1</Filter>
-    </Image>
-    <Image Include="Assets\Stage2\1.png">
-      <Filter>Assets\Stage2</Filter>
-    </Image>
-    <Image Include="Assets\Stage2\2.png">
-      <Filter>Assets\Stage2</Filter>
-    </Image>
-    <Image Include="Assets\Stage2\3.png">
-      <Filter>Assets\Stage2</Filter>
-    </Image>
-    <Image Include="Assets\Stage2\4.png">
-      <Filter>Assets\Stage2</Filter>
-    </Image>
-    <Image Include="Assets\Stage2\5.png">
-      <Filter>Assets\Stage2</Filter>
-    </Image>
-    <Image Include="Assets\Stage3\1.png">
-      <Filter>Assets\Stage3</Filter>
-    </Image>
-    <Image Include="Assets\Stage3\2.png">
-      <Filter>Assets\Stage3</Filter>
-    </Image>
-    <Image Include="Assets\Stage3\3.png">
-      <Filter>Assets\Stage3</Filter>
-    </Image>
-    <Image Include="Assets\Stage3\4.png">
-      <Filter>Assets\Stage3</Filter>
-    </Image>
-    <Image Include="Assets\Stage3\5.png">
-      <Filter>Assets\Stage3</Filter>
-    </Image>
     <Image Include="Assets\main.png">
       <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Overview.jpg">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Stage1\Stage1.jpg">
+      <Filter>Assets\Stage1</Filter>
+    </Image>
+    <Image Include="Assets\Stage2\Stage2.jpg">
+      <Filter>Assets\Stage2</Filter>
+    </Image>
+    <Image Include="Assets\Stage3\Stage3.jpg">
+      <Filter>Assets\Stage3</Filter>
+    </Image>
+    <Image Include="Assets\Stage2\Stage2a.jpg">
+      <Filter>Assets\Stage2</Filter>
+    </Image>
+    <Image Include="Assets\Stage2\Stage2b.jpg">
+      <Filter>Assets\Stage2</Filter>
     </Image>
   </ItemGroup>
 </Project>

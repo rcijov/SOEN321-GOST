@@ -13,12 +13,13 @@
                 <GradientStop Color="#F8F8F8" Offset="1" />
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Foreground="Black"  Margin="493,272,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" FontSize="30" SelectionChanged="txt256_SelectionChanged"/>
-        <TextBox x:Name="txtInput" HorizontalAlignment="Left" Margin="493,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457"/>
-        <Button Content="Hash" HorizontalAlignment="Left" Margin="834,448,0,0" VerticalAlignment="Top" Click="Button_Click" Background="#FFAFAADC" BorderBrush="Black" Height="44" Width="117"/>
+        <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Foreground="Black"  Margin="579,272,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" FontSize="30" SelectionChanged="txt256_SelectionChanged"/>
+        <TextBox x:Name="txtInput" HorizontalAlignment="Left" Margin="579,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457"/>
+        <Button Content="Hash" HorizontalAlignment="Left" Margin="938,448,0,0" VerticalAlignment="Top" Click="Button_Click" Background="#FFAFAADC" BorderBrush="Black" Height="44" Width="117"/>
         <TextBlock x:Name="outputLabel" HorizontalAlignment="Left" Margin="817,629,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="73" Width="210" Foreground="Black"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="136,99,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White" Click="Button_Click_1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="493,361,0,0" TextWrapping="Wrap" Text="Please enter the message to hash and press on the &quot;Hash&quot; button." VerticalAlignment="Top" Foreground="Black" FontSize="15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="579,361,0,0" TextWrapping="Wrap" Text="Please enter the message to hash and press on the &quot;Hash&quot; button." VerticalAlignment="Top" Foreground="Black" FontSize="15"/>
+        <Image HorizontalAlignment="Left" Height="465" Margin="104,195,0,0" VerticalAlignment="Top" Width="426" Source="Assets/Overview.jpg"/>
 
     </Grid>
 </Page>
