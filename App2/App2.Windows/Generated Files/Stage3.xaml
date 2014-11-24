@@ -13,9 +13,9 @@
                 <GradientStop Color="#F8F8F8" Offset="1" />
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="150,42,0,0" TextWrapping="Wrap" Text="Stage 3" VerticalAlignment="Top" Height="34" Width="138" Foreground="#FF060606" FontSize="30"/>
+        <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="541,37,0,0" TextWrapping="Wrap" Text="Stage 3" VerticalAlignment="Top" Height="34" Width="138" Foreground="#FF060606" FontSize="30"/>
         <Button x:ConnectionId='1' x:Name="btnBackP3" Content="Back" HorizontalAlignment="Left" Margin="36,36,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White"                         />
-        <Image x:Name="imgBox3" HorizontalAlignment="Left" Height="723" Margin="142,99,0,0" VerticalAlignment="Top" Width="261"/>
+        <Image x:Name="imgBox3" HorizontalAlignment="Left" Height="723" Margin="169,30,0,0" VerticalAlignment="Top" Width="261"/>
         <TextBlock x:Name="txtCode3" HorizontalAlignment="Left" Margin="541,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775" Foreground="Black" FontSize="15"/>
         <TextBlock x:Name="txtExpl3" HorizontalAlignment="Left" Margin="541,288,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775" Foreground="Black" FontSize="15"/>
         <Button x:Name="btnResult" Content="Result" HorizontalAlignment="Left" Margin="1218,697,0,0" VerticalAlignment="Top" Background="#FFCF3D3D" Height="59" Width="133" FontSize="30" BorderBrush="Black"/>

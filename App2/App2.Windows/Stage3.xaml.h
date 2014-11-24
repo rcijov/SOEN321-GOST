@@ -17,6 +17,8 @@ namespace App2
 	{
 	public:
 		Stage3();
+		Stage3(Platform::String^ str);
+
 	private:
 		void btnBackP3_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
