@@ -41,7 +41,7 @@ void App2::MainPage::btn256_Click(Platform::Object^ sender, Windows::UI::Xaml::R
 
 void App2::MainPage::btn512_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	App2::Page1::Page1(526);
+	App2::Page1::Page1(512);
 	this->Frame->Navigate(App2::Page1::typeid);
 }
 

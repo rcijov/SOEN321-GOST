@@ -82,7 +82,10 @@ Platform::String^ StateMapper::convertCharToString(unsigned char* charArray, int
 
 	for (size_t i = 0; i < length; i++)
 	{
-		stringValue += charArray[i].ToString();
+		wchar_t* value = new wchar_t[4];
+		swprintf_s(value, 4, L"%02X", (int)charArray[i]);
+		stringValue += ref new Platform::String(value);
+
 	}
 
 	return stringValue;
