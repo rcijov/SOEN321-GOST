@@ -14,6 +14,7 @@ namespace Windows {
             namespace Controls {
                 ref class TextBlock;
                 ref class TextBox;
+                ref class Button;
             }
         }
     }
@@ -33,7 +34,9 @@ namespace App2
     
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtTitle;
         private: ::Windows::UI::Xaml::Controls::TextBox^ txtInput;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ outputLabel;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ HexInput;
+        private: ::Windows::UI::Xaml::Controls::Button^ backButton;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ appTitle;
     };
 }
 

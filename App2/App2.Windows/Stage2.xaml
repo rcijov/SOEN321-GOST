@@ -12,7 +12,7 @@
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
+        <!--<x:String x:Key="AppName">My Application</x:String>-->
     </Page.Resources>
 
     <!--
@@ -41,16 +41,75 @@
                         Style="{StaticResource NavigationBackButtonNormalStyle}"
                         VerticalAlignment="Top"
                         Click="btnBackP2_Click"/>
-            <TextBlock x:Name="appTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock x:Name="appTitle" Text="Stage 2" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
-
         </Grid>
-        <StackPanel Margin="39,0,39,0" Grid.Row ="2" Grid.Column="0"  Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Margin="39,0,39,0" Grid.Row ="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
             <Image x:Name="imgBox2" Height="611" Width="292" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <StackPanel Margin="39,0,39,0" Orientation="Vertical" HorizontalAlignment="Center">
-                <TextBlock x:Name="txtTitle"                     Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Stage 2" VerticalAlignment="Top" Height="34" Width="138" />
-                <TextBlock x:Name="txtCode2" HorizontalAlignment="Left" Width ="500" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" />
+            <StackPanel Margin="39,0,39,0"  Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock x:Name="Iteration"  Style="{StaticResource SubheaderTextBlockStyle}" Text=""/>
+                <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                    <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="K" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="kValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock Text="=" VerticalAlignment="Center"/>
+                    <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="LPS(h &#x2296; N)" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="klpsValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel x:Name="lpsSteps" Orientation="Horizontal" Visibility="Collapsed">
+                    <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="S" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="sValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="PS" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="pValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="LPS" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="lValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <TextBlock Visibility="Collapsed"  x:Name="txtCode2" HorizontalAlignment="Left" Width ="500" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" />
                 <TextBlock x:Name="txtExpl2" HorizontalAlignment="Left" Width ="500" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" />
+                
+                <StackPanel x:Name="finalGroup">
+                    <TextBlock x:Name="finalValueTitle"  Style="{StaticResource SubheaderTextBlockStyle}" Text="Final Value"/>
+                    <StackPanel x:Name="finalValues" Orientation="Horizontal">
+                        <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                            <StackPanel Orientation="Vertical" Width="215">
+                                <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="N" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock x:Name="nValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                            <StackPanel Orientation="Vertical" Width="215">
+                                <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="h" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock x:Name="hValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                            <StackPanel Orientation="Vertical" Width="215">
+                                <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="Sigma" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="sigmaValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                     <Button x:Name="btn1" Content="Overview"     HorizontalAlignment="Left" VerticalAlignment="Top"  Background="#FF41B8CB" Click="btn1_Click" BorderBrush="Black"/>
                     <Button x:Name="btn2" Content="g_N"          HorizontalAlignment="Left"  VerticalAlignment="Top" Background="#FF41B8CB" Click="btn2_Click" BorderBrush="Black"/>

@@ -26,8 +26,12 @@ void ::App2::Page1::InitializeComponent()
     txtTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtTitle"));
     // Get the TextBox named 'txtInput'
     txtInput = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtInput"));
-    // Get the TextBlock named 'outputLabel'
-    outputLabel = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"outputLabel"));
+    // Get the TextBlock named 'HexInput'
+    HexInput = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"HexInput"));
+    // Get the Button named 'backButton'
+    backButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"backButton"));
+    // Get the TextBlock named 'appTitle'
+    appTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"appTitle"));
 }
 
 void ::App2::Page1::Connect(int connectionId, Platform::Object^ target)
@@ -35,8 +39,8 @@ void ::App2::Page1::Connect(int connectionId, Platform::Object^ target)
     switch (connectionId)
     {
     case 1:
-        (safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(target))->SelectionChanged +=
-            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Page1::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Page1::txt256_SelectionChanged);
+        (safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(target))->TextChanged +=
+            ref new ::Windows::UI::Xaml::Controls::TextChangedEventHandler(this, (void (::App2::Page1::*)(Platform::Object^, Windows::UI::Xaml::Controls::TextChangedEventArgs^))&Page1::txtInput_TextChanged);
         break;
     case 2:
         (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
@@ -45,6 +49,10 @@ void ::App2::Page1::Connect(int connectionId, Platform::Object^ target)
     case 3:
         (safe_cast<::Windows::UI::Xaml::Controls::Primitives::ButtonBase^>(target))->Click +=
             ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Page1::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Page1::Button_Click_1);
+        break;
+    case 4:
+        (safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(target))->SelectionChanged +=
+            ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App2::Page1::*)(Platform::Object^, Windows::UI::Xaml::RoutedEventArgs^))&Page1::txt256_SelectionChanged);
         break;
     }
     (void)connectionId; // Unused parameter

@@ -114,12 +114,15 @@ void App2::Page1::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 
 		for (size_t i = 0; i < sizeof(h512); i++)
 		{
-			stringValue += h512[i].ToString();
+			wchar_t* value = new wchar_t[4];
+			swprintf_s(value, 4, L"%02X", (int)h256[i]);
+			stringValue += ref new Platform::String(value);
+			//stringValue += h512[i].ToString();
 		}
 		break;
 	}
 
-	App2::Stage3::Stage3(stringValue);
+	App2::Stage3::Stage3(stringValue,choice);
 	App2::Stage1::Stage1(choice);
 	this->Frame->Navigate(App2::Stage1::typeid);
 }

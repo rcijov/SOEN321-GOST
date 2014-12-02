@@ -41,7 +41,7 @@
                         Style="{StaticResource NavigationBackButtonNormalStyle}"
                         VerticalAlignment="Top"
                         Click="btnBackP1_Click"/>
-            <TextBlock x:Name="appTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock x:Name="appTitle" Text="Stage 1" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
 
         </Grid>
@@ -49,16 +49,24 @@
             <Image x:Name="imgBox" Height="633" Width="153" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <StackPanel Margin="39,0,39,0" Orientation="Vertical" HorizontalAlignment="Center">
                 <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Style ="{StaticResource SubheaderTextBlockStyle}" Text="Stage 1" VerticalAlignment="Top" />
-                <TextBlock x:Name="txtCode" HorizontalAlignment="Left" TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775" Foreground="Black" FontSize="15"/>
                 <StackPanel Orientation="Horizontal">
                     <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
-                        <TextBlock x:Name="hValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" Width="215" TextWrapping="Wrap"  Text="508f7e553c06501d749a66fc28c6cac0b005746d97537fa85d9e40904efed29d"></TextBlock>
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="Initial h value" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="hValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"  Text="508f7e553c06501d749a66fc28c6cac0b005746d97537fa85d9e40904efed29d"></TextBlock>
+                        </StackPanel>
                     </Border>
                     <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
-                        <TextBlock x:Name="epsilonValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" Width="215" TextWrapping="Wrap"  Text="508f7e553c06501d749a66fc28c6cac0b005746d97537fa85d9e40904efed29d"></TextBlock>
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="Initial sigma value" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="epsilonValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"  Text="508f7e553c06501d749a66fc28c6cac0b005746d97537fa85d9e40904efed29d"></TextBlock>
+                        </StackPanel>
                     </Border>
                     <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
-                        <TextBlock x:Name="nValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" Width="215" TextWrapping="Wrap"  Text="508f7e553c06501d749a66fc28c6cac0b005746d97537fa85d9e40904efed29d"></TextBlock>
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="Initial N value" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="nValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"  Text="508f7e553c06501d749a66fc28c6cac0b005746d97537fa85d9e40904efed29d"></TextBlock>
+                        </StackPanel>
                     </Border>
                 </StackPanel>
                 <TextBlock x:Name="txtExpl" HorizontalAlignment="Left" TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775" Foreground="Black" FontSize="15"/>

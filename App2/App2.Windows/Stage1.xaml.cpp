@@ -33,9 +33,12 @@ Stage1::Stage1()
 	InitializeComponent();
 	txtTitle->Text = ch.ToString();
 	imgBox->Source = ref new BitmapImage(ref new Uri("ms-appx:///Assets/Stage1/Stage1.jpg"));
-	txtCode->Text = "H : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_H, 0) + "\n";
-	txtCode->Text += "Epsilon : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_EPSILON, 0) + "\n";
-	txtCode->Text += "N : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_N, 0) + "\n";
+	//txtCode->Text = "H : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_H, 0) + "\n";
+	//txtCode->Text += "Epsilon : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_EPSILON, 0) + "\n";
+	//txtCode->Text += "N : " + safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_N, 0) + "\n";
+	hValue->Text = safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_H, 0);
+	epsilonValue->Text = safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_EPSILON, 0);
+	nValue->Text = safe_cast<App2::App^>(App2::App::Current)->stateMapper->getValue(App2::Step::STEP_1, App2::Value::INIT_N, 0);
 	txtExpl->Text = "Stage 1 involves the initialization of variables." + "\n" + 
 		"The variables of interest include: " + "\n" + "h - The hash of the message. In the case of a 512 bit hash, it is initialized to 0^512." + 
 		"\n" + "For 256 bit hashes it is initialized to (00000001)^64 N - The length of the processed message." + 

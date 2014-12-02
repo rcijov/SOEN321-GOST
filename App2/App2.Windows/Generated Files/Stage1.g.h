@@ -12,8 +12,8 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class TextBlock;
                 ref class Image;
+                ref class TextBlock;
                 ref class Button;
             }
         }
@@ -32,11 +32,14 @@ namespace App2
     private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ txtTitle;
         private: ::Windows::UI::Xaml::Controls::Image^ imgBox;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ txtCode;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ txtTitle;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ txtExpl;
-        private: ::Windows::UI::Xaml::Controls::Button^ btnBackP1;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ nValue;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ epsilonValue;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ hValue;
+        private: ::Windows::UI::Xaml::Controls::Button^ backButton;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ appTitle;
     };
 }
 

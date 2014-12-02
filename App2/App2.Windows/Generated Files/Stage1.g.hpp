@@ -22,16 +22,22 @@ void ::App2::Stage1::InitializeComponent()
     // Call LoadComponent on ms-appx:///Stage1.xaml
     ::Windows::UI::Xaml::Application::LoadComponent(this, ref new ::Windows::Foundation::Uri(L"ms-appx:///Stage1.xaml"), ::Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation::Application);
 
-    // Get the TextBlock named 'txtTitle'
-    txtTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtTitle"));
     // Get the Image named 'imgBox'
     imgBox = safe_cast<::Windows::UI::Xaml::Controls::Image^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"imgBox"));
-    // Get the TextBlock named 'txtCode'
-    txtCode = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtCode"));
+    // Get the TextBlock named 'txtTitle'
+    txtTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtTitle"));
     // Get the TextBlock named 'txtExpl'
     txtExpl = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtExpl"));
-    // Get the Button named 'btnBackP1'
-    btnBackP1 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnBackP1"));
+    // Get the TextBlock named 'nValue'
+    nValue = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"nValue"));
+    // Get the TextBlock named 'epsilonValue'
+    epsilonValue = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"epsilonValue"));
+    // Get the TextBlock named 'hValue'
+    hValue = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"hValue"));
+    // Get the Button named 'backButton'
+    backButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"backButton"));
+    // Get the TextBlock named 'appTitle'
+    appTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"appTitle"));
 }
 
 void ::App2::Stage1::Connect(int connectionId, Platform::Object^ target)

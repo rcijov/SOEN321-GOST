@@ -22,18 +22,28 @@ void ::App2::Stage3::InitializeComponent()
     // Call LoadComponent on ms-appx:///Stage3.xaml
     ::Windows::UI::Xaml::Application::LoadComponent(this, ref new ::Windows::Foundation::Uri(L"ms-appx:///Stage3.xaml"), ::Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation::Application);
 
-    // Get the TextBlock named 'txtTitle'
-    txtTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtTitle"));
-    // Get the Button named 'btnBackP3'
-    btnBackP3 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnBackP3"));
     // Get the Image named 'imgBox3'
     imgBox3 = safe_cast<::Windows::UI::Xaml::Controls::Image^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"imgBox3"));
     // Get the TextBlock named 'txtCode3'
     txtCode3 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtCode3"));
     // Get the TextBlock named 'txtExpl3'
     txtExpl3 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"txtExpl3"));
-    // Get the Button named 'btnResult'
-    btnResult = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"btnResult"));
+    // Get the TextBlock named 'finalValueTitle'
+    finalValueTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"finalValueTitle"));
+    // Get the TextBlock named 'finalValueLabel'
+    finalValueLabel = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"finalValueLabel"));
+    // Get the TextBlock named 'finalValue'
+    finalValue = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"finalValue"));
+    // Get the TextBlock named 'sigmaValue'
+    sigmaValue = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"sigmaValue"));
+    // Get the TextBlock named 'hValue'
+    hValue = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"hValue"));
+    // Get the TextBlock named 'nValue'
+    nValue = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"nValue"));
+    // Get the Button named 'backButton'
+    backButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"backButton"));
+    // Get the TextBlock named 'appTitle'
+    appTitle = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(static_cast<Windows::UI::Xaml::IFrameworkElement^>(this)->FindName(L"appTitle"));
 }
 
 void ::App2::Stage3::Connect(int connectionId, Platform::Object^ target)

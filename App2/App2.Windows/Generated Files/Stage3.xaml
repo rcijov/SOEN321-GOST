@@ -1,4 +1,93 @@
 ﻿<Page
+    x:Name="pageRoot"
+    x:Class="App2.Stage3"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:common="using:App2.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">My Application</x:String>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:ConnectionId='1' x:Name="backButton" Margin="39,59,39,0"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        VerticalAlignment="Top"
+                                               />
+            <TextBlock x:Name="appTitle" Text="Stage 3" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+
+        </Grid>
+        <StackPanel Margin="39,0,39,0" Grid.Row ="2" Grid.Column="0"  Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image x:Name="imgBox3" Height="723" Width="261" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <StackPanel Margin="39,0,39,0" Orientation="Vertical" HorizontalAlignment="Center">
+                <!--<TextBlock x:Name="txtTitle" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Stage 3" VerticalAlignment="Top"   Height="34" Width="138" />-->
+                <TextBlock x:Name="txtCode3" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775"/>
+                <TextBlock x:Name="txtExpl3" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775"/>
+                
+                <StackPanel Orientation="Horizontal">
+                    <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="N" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="nValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="h" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="hValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="Sigma" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="sigmaValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <TextBlock x:Name="finalValueTitle" Style="{StaticResource SubheaderTextBlockStyle}" Text="Final Value"/>
+                
+                <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                    <StackPanel Orientation="Vertical" Width="215">
+                        <TextBlock x:Name="finalValueLabel"  Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="N" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="finalValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
+
+<!--<Page
     x:Class="App2.Stage3"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -14,11 +103,11 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="541,37,0,0" TextWrapping="Wrap" Text="Stage 3" VerticalAlignment="Top" Height="34" Width="138" Foreground="#FF060606" FontSize="30"/>
-        <Button x:ConnectionId='1' x:Name="btnBackP3" Content="Back" HorizontalAlignment="Left" Margin="36,36,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White"                         />
+        <Button x:Name="btnBackP3" Content="Back" HorizontalAlignment="Left" Margin="36,36,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White" Click="btnBackP3_Click" />
         <Image x:Name="imgBox3" HorizontalAlignment="Left" Height="723" Margin="169,30,0,0" VerticalAlignment="Top" Width="261"/>
         <TextBlock x:Name="txtCode3" HorizontalAlignment="Left" Margin="541,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775" Foreground="Black" FontSize="15"/>
         <TextBlock x:Name="txtExpl3" HorizontalAlignment="Left" Margin="541,288,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775" Foreground="Black" FontSize="15"/>
         <Button x:Name="btnResult" Content="Result" HorizontalAlignment="Left" Margin="1218,697,0,0" VerticalAlignment="Top" Background="#FFCF3D3D" Height="59" Width="133" FontSize="30" BorderBrush="Black"/>
     </Grid>
-</Page>
+</Page>-->
 

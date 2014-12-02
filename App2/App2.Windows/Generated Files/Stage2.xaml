@@ -1,4 +1,141 @@
 ﻿<Page
+    x:Name="pageRoot"
+    x:Class="App2.Stage2"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:common="using:App2.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <!--<x:String x:Key="AppName">My Application</x:String>-->
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:ConnectionId='17' x:Name="backButton" Margin="39,59,39,0"
+                        Style="{StaticResource NavigationBackButtonNormalStyle}"
+                        VerticalAlignment="Top"
+                                               />
+            <TextBlock x:Name="appTitle" Text="Stage 2" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+        </Grid>
+        <StackPanel Margin="39,0,39,0" Grid.Row ="2" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image x:Name="imgBox2" Height="611" Width="292" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <StackPanel Margin="39,0,39,0"  Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock x:Name="Iteration"  Style="{StaticResource SubheaderTextBlockStyle}" Text=""/>
+                <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                    <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="K" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="kValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock Text="=" VerticalAlignment="Center"/>
+                    <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="LPS(h &#x2296; N)" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="klpsValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <StackPanel x:Name="lpsSteps" Orientation="Horizontal" Visibility="Collapsed">
+                    <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="S" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="sValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="PS" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="pValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="LPS" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="lValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <TextBlock Visibility="Collapsed"  x:Name="txtCode2" HorizontalAlignment="Left" Width ="500" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" />
+                <TextBlock x:Name="txtExpl2" HorizontalAlignment="Left" Width ="500" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" />
+                
+                <StackPanel x:Name="finalGroup">
+                    <TextBlock x:Name="finalValueTitle"  Style="{StaticResource SubheaderTextBlockStyle}" Text="Final Value"/>
+                    <StackPanel x:Name="finalValues" Orientation="Horizontal">
+                        <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                            <StackPanel Orientation="Vertical" Width="215">
+                                <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="N" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock x:Name="nValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                            <StackPanel Orientation="Vertical" Width="215">
+                                <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="h" HorizontalAlignment="Center"></TextBlock>
+                                <TextBlock x:Name="hValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                            <StackPanel Orientation="Vertical" Width="215">
+                                <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="Sigma" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="sigmaValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <Button x:ConnectionId='13' x:Name="btn1" Content="Overview"     HorizontalAlignment="Left" VerticalAlignment="Top"  Background="#FF41B8CB"                    BorderBrush="Black"/>
+                    <Button x:ConnectionId='14' x:Name="btn2" Content="g_N"          HorizontalAlignment="Left"  VerticalAlignment="Top" Background="#FF41B8CB"                    BorderBrush="Black"/>
+                    <Button x:ConnectionId='15' x:Name="btn3" Content="Results"      HorizontalAlignment="Left"  VerticalAlignment="Top" Background="#FF41B8CB"                    BorderBrush="Black"/>
+                    <Button x:ConnectionId='16' x:Name="btnStage3" Content="Stage 3" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFCF3D3D"                      BorderBrush="Black"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <Button x:ConnectionId='1' x:Name="btnE1"  Content="1"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='2' x:Name="btnE2"  Content="2"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='3' x:Name="btnE3"  Content="3"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='4' x:Name="btnE4"  Content="4"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='5' x:Name="btnE5"  Content="5"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='6' x:Name="btnE6"  Content="6"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='7' x:Name="btnE7"  Content="7"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='8' x:Name="btnE8"  Content="8"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='9' x:Name="btnE9"  Content="9"   HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                    />
+                    <Button x:ConnectionId='10' x:Name="btnE10" Content="10"  HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                     />
+                    <Button x:ConnectionId='11' x:Name="btnE11" Content="11"  HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                     />
+                    <Button x:ConnectionId='12' x:Name="btnE12" Content="12"  HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF41B8CB"                     />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
+    
+    <!--<Page
     x:Class="App2.Stage2"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -14,26 +151,26 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBlock x:Name="txtTitle" HorizontalAlignment="Left" Margin="157,42,0,0" TextWrapping="Wrap" Text="Stage 2" VerticalAlignment="Top" Height="34" Width="138" Foreground="#FF060606" FontSize="30"/>
-        <Button x:ConnectionId='1' x:Name="btnStage3" Content="Stage 3" HorizontalAlignment="Left" Margin="1218,697,0,0" VerticalAlignment="Top" Background="#FFCF3D3D"                      Height="59" Width="133" FontSize="30" BorderBrush="Black"/>
-        <Button x:ConnectionId='2' x:Name="btn1" Content="Overview" HorizontalAlignment="Left" Margin="926,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="160" FontSize="30"                    BorderBrush="Black"/>
-        <Button x:ConnectionId='3' x:Name="btn2" Content="g_N" HorizontalAlignment="Left" Margin="1097,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="105" FontSize="30"                    BorderBrush="Black"/>
-        <Button x:ConnectionId='4' x:Name="btn3" Content="Results" HorizontalAlignment="Left" Margin="1216,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="135" FontSize="30"                    BorderBrush="Black"/>
+        <Button x:Name="btnStage3" Content="Stage 3" HorizontalAlignment="Left" Margin="1218,697,0,0" VerticalAlignment="Top" Background="#FFCF3D3D" Click="Button_Click" Height="59" Width="133" FontSize="30" BorderBrush="Black"/>
+        <Button x:Name="btn1" Content="Overview" HorizontalAlignment="Left" Margin="926,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="160" FontSize="30" Click="btn1_Click" BorderBrush="Black"/>
+        <Button x:Name="btn2" Content="g_N" HorizontalAlignment="Left" Margin="1097,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="105" FontSize="30" Click="btn2_Click" BorderBrush="Black"/>
+        <Button x:Name="btn3" Content="Results" HorizontalAlignment="Left" Margin="1216,622,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="135" FontSize="30" Click="btn3_Click" BorderBrush="Black"/>
         <Image x:Name="imgBox2" HorizontalAlignment="Left" Height="611" Margin="142,99,0,0" VerticalAlignment="Top" Width="292"/>
         <TextBlock x:Name="txtCode2" HorizontalAlignment="Left" Margin="541,137,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775" Foreground="Black" FontSize="15"/>
         <TextBlock x:Name="txtExpl2" HorizontalAlignment="Left" Margin="541,288,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775" Foreground="Black" FontSize="15"/>
-        <Button x:ConnectionId='5' x:Name="btnBackP2" Content="Back" HorizontalAlignment="Left" Margin="36,36,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White"                         />
-        <Button x:ConnectionId='6' x:Name="btnE1" Content="1" HorizontalAlignment="Left" Margin="702,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='7' x:Name="btnE2" Content="2" HorizontalAlignment="Left" Margin="753,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='8' x:Name="btnE3" Content="3" HorizontalAlignment="Left" Margin="804,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='9' x:Name="btnE4" Content="4" HorizontalAlignment="Left" Margin="856,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='10' x:Name="btnE5" Content="5" HorizontalAlignment="Left" Margin="907,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='11' x:Name="btnE6" Content="6" HorizontalAlignment="Left" Margin="958,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='12' x:Name="btnE7" Content="7" HorizontalAlignment="Left" Margin="1009,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='13' x:Name="btnE8" Content="8" HorizontalAlignment="Left" Margin="1060,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='14' x:Name="btnE9" Content="9" HorizontalAlignment="Left" Margin="1111,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black"                    />
-        <Button x:ConnectionId='15' x:Name="btnE10" Content="10" HorizontalAlignment="Left" Margin="1162,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black"                     />
-        <Button x:ConnectionId='16' x:Name="btnE11" Content="11" HorizontalAlignment="Left" Margin="1225,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black"                     />
-        <Button x:ConnectionId='17' x:Name="btnE12" Content="12" HorizontalAlignment="Left" Margin="1288,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black"                     />
+        <Button x:Name="btnBackP2" Content="Back" HorizontalAlignment="Left" Margin="36,36,0,0" VerticalAlignment="Top" Height="43" Width="99" BorderBrush="Black" Background="#FF7FE644" Foreground="White" Click="btnBackP2_Click" />
+        <Button x:Name="btnE1" Content="1" HorizontalAlignment="Left" Margin="702,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE1_Click"/>
+        <Button x:Name="btnE2" Content="2" HorizontalAlignment="Left" Margin="753,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE2_Click"/>
+        <Button x:Name="btnE3" Content="3" HorizontalAlignment="Left" Margin="804,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE3_Click"/>
+        <Button x:Name="btnE4" Content="4" HorizontalAlignment="Left" Margin="856,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE4_Click"/>
+        <Button x:Name="btnE5" Content="5" HorizontalAlignment="Left" Margin="907,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE5_Click"/>
+        <Button x:Name="btnE6" Content="6" HorizontalAlignment="Left" Margin="958,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE6_Click"/>
+        <Button x:Name="btnE7" Content="7" HorizontalAlignment="Left" Margin="1009,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE7_Click"/>
+        <Button x:Name="btnE8" Content="8" HorizontalAlignment="Left" Margin="1060,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE8_Click"/>
+        <Button x:Name="btnE9" Content="9" HorizontalAlignment="Left" Margin="1111,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="50" FontSize="30" BorderBrush="Black" Click="btnE9_Click"/>
+        <Button x:Name="btnE10" Content="10" HorizontalAlignment="Left" Margin="1162,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black" Click="btnE10_Click"/>
+        <Button x:Name="btnE11" Content="11" HorizontalAlignment="Left" Margin="1225,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black" Click="btnE11_Click"/>
+        <Button x:Name="btnE12" Content="12" HorizontalAlignment="Left" Margin="1288,551,0,0" VerticalAlignment="Top" Height="56" Background="#FF41B8CB" Width="62" FontSize="30" BorderBrush="Black" Click="btnE12_Click"/>
     </Grid>
-</Page>
+</Page>-->
 

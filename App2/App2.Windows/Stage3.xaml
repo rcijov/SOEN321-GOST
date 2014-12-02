@@ -41,16 +41,47 @@
                         Style="{StaticResource NavigationBackButtonNormalStyle}"
                         VerticalAlignment="Top"
                         Click="btnBackP3_Click"/>
-            <TextBlock x:Name="appTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock x:Name="appTitle" Text="Stage 3" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
 
         </Grid>
         <StackPanel Margin="39,0,39,0" Grid.Row ="2" Grid.Column="0"  Orientation="Horizontal" HorizontalAlignment="Center">
             <Image x:Name="imgBox3" Height="723" Width="261" HorizontalAlignment="Left" VerticalAlignment="Top" />
             <StackPanel Margin="39,0,39,0" Orientation="Vertical" HorizontalAlignment="Center">
-                <TextBlock x:Name="txtTitle" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Stage 3" VerticalAlignment="Top"   Height="34" Width="138" />
+                <!--<TextBlock x:Name="txtTitle" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Stage 3" VerticalAlignment="Top"   Height="34" Width="138" />-->
                 <TextBlock x:Name="txtCode3" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="126" Width="775"/>
                 <TextBlock x:Name="txtExpl3" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="174" Width="775"/>
+                
+                <StackPanel Orientation="Horizontal">
+                    <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="N" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="nValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="h" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock x:Name="hValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="10, 10, 10, 10"  Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                        <StackPanel Orientation="Vertical" Width="215">
+                            <TextBlock Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="Sigma" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="sigmaValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <TextBlock x:Name="finalValueTitle" Style="{StaticResource SubheaderTextBlockStyle}" Text="Final Value"/>
+                
+                <Border Margin="10, 10, 10, 10" Background="{StaticResource ToolTipBackgroundThemeBrush}" BorderBrush="{StaticResource ToolTipBorderThemeBrush}">
+                    <StackPanel Orientation="Vertical" Width="215">
+                        <TextBlock x:Name="finalValueLabel"  Margin="5, 5, 5, 5" Style="{StaticResource CaptionTextBlockStyle}" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  TextWrapping="Wrap"  Text="N" HorizontalAlignment="Center"></TextBlock>
+                        <TextBlock x:Name="finalValue" Foreground="{StaticResource ToolTipForegroundThemeBrush}"  FontFamily="Lucida Console" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
             </StackPanel>
         </StackPanel>
     </Grid>
